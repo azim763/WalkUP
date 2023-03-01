@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalkUp</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="js.js" defer></script>
+    <script src="https://kit.fontawesome.com/a78fab2428.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div id="form">
+        <form id="enter-experience">
+            <div class="page-heading">
+                <h2>Tools</h2>
+            </div>
+
+            <label for="Title">Title</label>
+            <input type="text" id="Title" class="input" name="Title" placeholder="Title..."><br>
+
+            <label for="place">Place</label>
+            <input type="text" id="place" class="input" name="place" placeholder="place..."><br>
+
+            <label for="tool_for_adventure">Adventure</label>
+            <select name="tool_for_adventure" id="tool_for_adventure" class="input">
+                <option value="1">Fishing</option>
+                <option value="2">Trekking</option>
+                <option value="3">Kayaking</option>
+                <option value="4">Camping</option>
+                <option value="5">Skiing </option>
+                <option value="6">Skating</option>
+            </select><br>
+
+
+            <input type="file" id="myFile" name="filename">
+            <button id="upload_file">Upload Photos</button><br>
+
+            <label for="description">Description</label>
+            <input type="text" id="description" class="input" name="description" placeholder="Your experience..."><br>
+
+            <label for="item_for">For</label>
+            <div class="radio_buttons">
+                <input type="radio" id="renting" name="item_for" value="renting">
+                <label for="renting">Renting</label>
+                <input type="radio" id="selling" name="item_for" value="selling">
+                <label for="selling">Selling</label>
+            </div>
+            
+            <label for="availability">Availability</label>
+            <input type="datetime-local" id="availability" class="input" name="availability"><br>
+
+            <button id="submit_form_btn">Submit <i class="fa-solid fa-arrow-right"></i></button>
+        </form><br>
+
+        <div class="checklist"></div>
+    </div>
+</body>
+
+</html>
