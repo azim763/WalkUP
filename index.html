@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Swiper CSS -->
+  <!-- <link rel="stylesheet" href="js/swiper/swiper.min.css"> -->
+  
+  <!-- Swiper JS -->
+ <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+  <script src="auth/config.js"></script>
+  <script src="auth/common.js"></script>
+  <link href="auth/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script src="auth/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="auth/firebaseui.css" />
+
+
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="js/swiper/swiper-bundle.css">
+  
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
+    <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="js/common.js" defer></script>
+    <link rel="stylesheet" href="common.css">
+    <title>WalkUp</title>
+ 
+  </head>
+  <body class="home">
+    <header>
+      <div class="wrapper">
+        <h1>
+          <a href="index.html" class="branding"
+            ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+          /></a>
+
+        </h1>
+       <div id="container">
+          
+          <div id="loading">Loading...</div>
+          <div id="loaded" class="hidden">
+            <div id="main">
+              <div id="user-signed-in" >
+                <div id="user-info">
+                  <div id="photo-container">
+                    <img id="photo">
+                  </div>
+                  <div id="name"></div>
+                  <div id="email"></div>
+                  <div id="phone"></div>
+                  <div id="is-new-user"></div>
+                  <div class="clearfix"></div> 
+                   <!-- <button id="sign-out">Sign Out</button> -->
+                   <button class="signinout" onclick="window.open('logged.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100');">Sign out</button>
+                </div>
+             
+              </div>
+              <div id="user-signed-out" class="hidden user-signed-out">
+                <!-- <button id="sign-out" class="signinout" >Sign Out</button>  -->
+                <a href="auth/login.html" >Sign In</a>
+
+                <!-- <button  class="signinout"  onclick="window.open('auth/login.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100');">Sign In</button> -->
+              </div>          
+            </div>
+          </div>
+        </div>  
+         <a href="#"  id="menuBut"><i class="fa-solid fa-bars"></i></a>
+      
+      </div>
+    </header>
+
+    <nav class="hamburger-menu" id="secMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gears/gear-home.html">Gear Cneter</a></li>
+        <li><a href="other/profile.html">Profile</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="search-section">
+        <div class="MainSearch-container">
+          <h2>“Embrace the Great Outdoors!”</h2>
+          <form action="adventure/adventure-archive.html" method="GET">
+            <label for="search-input" class="input-cont">
+              <input type="text" id="search-input" name="q" placeholder="Search by city, park or activity name..." />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+          </form>
+        </div>
+       
+      </section>
+      <section class="activities-cats slider-sec">
+        <div class="wrapper">
+          <h2>Explore Your Fit Activity</h2>
+          <div class="slider-container swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+            <div class="swiper-wrapper">
+
+            </div>
+         
+          </div>
+        </div>
+      </section>
+      <section class="gears-sec banner-sec">
+        <div class="wrapper">
+          <p>
+            Missing important tools to make your experience safe and convenient?
+          </p>
+          <a href="gears/gear-home.html">Gears Center</a>
+        </div>
+      </section>
+      <section class="experience-sec banner-sec">
+        <div class="experiencesec-left">
+          <div class="wrapper">
+            <p>
+              Join our community to have access to the latest experiences and
+              discover new places to visit outdoors.
+            </p>
+            <a href="#">Book Experience</a>
+          </div>
+        </div>
+        <div class="experiencesec-right">
+          <div class="wrapper">
+            <p>
+              Join our community to have access to the latest experiences and
+              discover new places to visit outdoors.
+            </p>
+            <a href="#">Book Experience</a>
+          </div>
+        </div>
+       
+      
+      </section>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <span href="index.html" class="branding"
+          ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+        /></span>
+        <nav class="footer-main-nav">
+          <ul>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Gear Center</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-social">
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+ 
+<script  src="js/data/readcats.js"  type="module"  defer></script>
+<script src="js/swiper/swiper-bundle.js" ></script>
+<script src="js/script.js"></script>
+<script src="auth/loggedin.js"></script>
+</html>
