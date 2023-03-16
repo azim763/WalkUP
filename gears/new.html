@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Gear</title>
+
+  <script  src="uploaddata.js"  type="module" defer></script>
+  <script src="upload.js" defer></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script> -->
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+  <script src="../auth/config.js"></script>
+  <script src="../auth/common.js"></script>
+  <link href="../auth/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script src="../auth/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="../auth/firebaseui.css" />
+
+
+
+
+
+
+  <link rel="stylesheet" href="style.css">
+  <script src="tomtommap.js" defer></script>
+  <script src="https://kit.fontawesome.com/a78fab2428.js" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
+  <script  src="readdata.js"  type="module" defer></script>
+ 
+ 
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
+    defer</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+      defer</script>
+      <script type="text/javascript" src="/maps.js" defer></script> -->
+      <!-- <script type="text/javascript" src="/googlemaps.js" defer></script> --> 
+      <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
+      <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
+      <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
+
+      <script src="account.js" defer></script>
+
+    </head>
+    
+    <body>
+
+      
+      <div id="container">
+          
+        <div id="loading">Loading...</div>
+        <div id="loaded" class="hidden">
+          <div id="main">
+            <div id="user-signed-in" >
+              <div id="user-info">
+                <div id="photo-container">
+                  <img id="photo">
+                </div>
+                <div id="name"></div>
+                <div id="email"></div>
+                <div id="phone"></div>
+                <div id="is-new-user"></div>
+                <div class="clearfix"></div> 
+                 <!-- <button id="sign-out">Sign Out</button> -->
+              </div>
+           
+            </div>
+            <div id="user-signed-out" class="hidden">
+              <a href="auth/login.html" >Sign In</a>
+            </div>
+         
+          </div>
+        </div>
+      </div>  
+      <nav class="hamburger-menu" id="secMenu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../gears/gear-home.html">Gear Cneter</a></li>
+          <li><a href="../other/profile.html">Profile</a></li>
+        </ul>
+      </nav>
+      <div id="form">
+        <div class="page-heading">
+          <h2>Post a New Gear</h2>
+        </div>
+        <form id="enter-experience">
+          
+          <label for="adventure_category">Gear Category</label>
+          <select name="adventure_category" id="adventure_category" class="input">
+          </select><br>
+           
+          <label for="Title">Title</label>
+          <input type="text" id="title" class="input" name="Title" placeholder="Title..." required><br>
+          
+          <div class="location">
+            <p id="status"></p>
+            <div id="map"></div>
+            <!-- <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3RHZfh9nIzpDJafXK4egw84mal9IUZPI&callback=initMap">
+    </script> -->
+            <p id="latitude"></p>
+            <p id="longitude"></p>
+          </div><br>
+          
+          <!-- <input type="file" id="myFile" name="files[]" multiple required> -->
+         
+                   <div class="camera-wrapper">
+            <div class="final-step">
+              <input type="button" id="startbutton" value="Upload Profile Image" />
+              <div id="camera-widget-wrapper" class="camera-widget-wrapper">
+                <div id="camera-widget" class="camera-widget">
+                  <div class="widget-head">
+                    <div class="cancel">
+                      <span></span><span id="cancel"><i class="fas fa-times"></i></span>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div class="camera" id="camera">
+                      <video  id="video">Video stream not available.</video>
+                    </div>
+                    <canvas  id="canvas"> </canvas>
+                    <div class="output visually-hidden" id="output">
+                      <img
+                        id="photo"
+                        alt="The screen capture will appear in this box."
+                      />
+                    </div>
+                    <div class="camera-controls">
+                      <div class="retake" id="retake">
+                        <i class="fas fa-redo-alt"></i>
+                      </div>
+                      <div class="capture" id="capturebutton">
+                        <i class="fas fa-camera"></i>
+                      </div>
+                      <div class="save disabled" id="save">
+                        <i class="far fa-check-circle"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <label for="description">Description</label>
+          <textarea type="text" id="description" class="input" name="description" placeholder="Your experience..."> </textarea>
+          
+          <label for="brand">Brand</label>
+          <input type="texts" id="brand" class="input" name="brand" min="0" required><br>
+          
+          <label for="occupancy">Occupancy</label>
+          <input type="text" id="occupancy" class="input" name="occupancy" min="0" required><br>
+          
+          <label for="duration">Duration</label>
+          <input type="number" id="duration" class="input" name="duration" min="0" required><br>
+          
+          <label for="weight">Weight</label>
+      <input type="number" id="weight" class="input" name="weight" min="0" max="5" required><br>
+      
+      <label for="price">Price per day</label>
+      <input type="number" id="price" class="input" name="price" min="0" max="5" required><br>
+      
+      <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
+     <a href="gear-archive.html">Back</a>
+    </form><br>
+   
+    <div class="checklist"></div>
+  </div>
+</body>
+
+ <script src="../auth/loggedin.js"></script>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+  <script src="../auth/config.js"></script>
+  <script src="../auth/common.js"></script>
+  <link href="../auth/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script src="../auth/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="../auth/firebaseui.css" />
+
+
+  <link rel="stylesheet" href="../gears/Gearstyle.css">
+  <script src="../js/script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <script src="../js/common.js" defer></script>
+  <link rel="stylesheet" href="../common.css">
+  <title>WalkUp</title>
+
+  <!-- Owl Stylesheets -->
+  <link href="../js/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="../js/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" />
+  <!-- Owl JS -->
+  <script src="../js/owlcarousel/jquery.min.js"></script>
+  <script src="../js/owlcarousel/owl.carousel.min.js"></script>
+  <title>Explore</title>
+</head>
+
+<body class="single">
+  <header>
+    <div class="wrapper ">
+      <h1>
+        <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Sign Walkup-08.svg" alt="Logo SVG" /></a>
+      </h1>
+      <div id="container">
+        <div id="loading">Loading...</div>
+        <div id="loaded" class="hidden">
+          <div id="main">
+            <div id="user-signed-in">
+              <div id="user-info">
+                <div id="photo-container">
+                  <img id="photo" />
+                </div>
+                <div id="name"></div>
+                <div id="email"></div>
+                <div id="phone"></div>
+                <div id="is-new-user"></div>
+                <div class="clearfix"></div>
+                <!-- <button id="sign-out">Sign Out</button> -->
+              </div>
+            </div>
+            <div id="user-signed-out" class="hidden">
+              <a href="../auth/login.html">Sign In</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#"  id="menuBut"><i class="fa-solid fa-bars"></i></a>
+    </div>
+  </header>
+  <nav class="hamburger-menu" id="secMenu">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../gears/gear-home.html">Gear Cneter</a></li>
+      <li><a href="../other/profile.html">Profile</a></li>
+    </ul>
+  </nav>
+  <main id="myObjectList">
+
+
+
+  </main>
+
+  <div id="recommendationList">
+    <h2>Similar Items:</h2>
+
+  </div>
+
+  <footer>
+    <div class="wrapper">
+      <span href="index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"></span>
+      <nav class="footer-main-nav">
+        <ul>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Gear Center</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-social">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy; 2023 Walkup. All rights reserved.
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+<script src="js/gears-single.js" type="module"></script>
+<script src="../auth/loggedin.js"></script>
+
+</html>
