@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- <script src="https://cdn.tomtom.com/maps-sdk-for-web/cdn/releases/6.14.0/examples/sdk/web.min.js"></script> -->
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
+        <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
+ </head>
+<body>
+    <div id="map" style="height: 100vh;"></div>
+<script>
+
+let map, marker;
+
+function initMap() {
+  // Create a new map centered on a specific location
+  map = tt.map({
+    key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+    container: 'map',
+    // center: [37.7749, -122.4194],
+    center: [ -122.4194, 37.4194],
+    zoom: 8,
+  });
+
+  // Add a marker to the map
+//   marker = new tt.Marker({ draggable: true }).setLngLat([37.7749, -122.4194]).addTo(map);
+  marker = new tt.Marker({ draggable: true }).setLngLat([ -122.4194,37.7749]).addTo(map);
+
+  // Listen for the marker dragend event
+  marker.on('dragend', function (e) {
+    // Get the new latitude and longitude of the marker
+    let lat = e.target.getLngLat().lat;
+    let lng = e.target.getLngLat().lng;
+
+    // Do something with the new coordinates
+    console.log("New latitude: " + lat);
+    console.log("New longitude: " + lng);
+  });
+}
+
+
+
+
+
+// // import { services } from @tomtom-international/web-sdk-services;
+// //         import { map, LngLat } from @tomtom-international/web-sdk-maps;  
+
+
+
+
+// let map, marker;
+
+function initMapGeolocation() {
+  // Create a new map centered on the user's current location
+  tt.setProductInfo('MyAwesomeApp', '1.0.0'); // optional
+  tt.services.fuzzySearch({
+    key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+    query: 'my location',
+    language: 'en-US',
+    limit: 1
+  }).then(function (result) {
+    let userLocation = result.results[0].position;
+    map = tt.map({
+      key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+      container: 'map',
+      center: userLocation,
+      zoom: 8,
+    });
+
+    // Add a marker to the map
+    marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
+
+    // Listen for the marker dragend event
+    marker.on('dragend', function (e) {
+      // Get the new latitude and longitude of the marker
+      let lat = e.target.getLngLat().lat;
+      let lng = e.target.getLngLat().lng;
+
+      // Do something with the new coordinates
+      console.log("New latitude: " + lat);
+      console.log("New longitude: " + lng);
+    });
+  });
+}
+
+
+// let map, marker;
+
+function initMapCurrentLocation() {
+  // Get the user's current location
+  navigator.geolocation.getCurrentPosition(function (position) {
+    let userLocation = [position.coords.longitude, position.coords.latitude];
+
+    // Create a new map centered on the user's current location
+    map = tt.map({
+      key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+      container: 'map',
+      center: userLocation,
+      zoom: 12,
+    });
+
+    // Add a marker to the map
+    marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
+
+    // Listen for the marker dragend event
+    marker.on('dragend', function (e) {
+      // Get the new latitude and longitude of the marker
+      let lat = e.target.getLngLat().lat;
+      let lng = e.target.getLngLat().lng;
+
+      // Do something with the new coordinates
+      console.log("New latitude: " + lat);
+      console.log("New longitude: " + lng);
+    });
+  });
+}
+
+// initMap();
+// initMapGeolocation();
+initMapCurrentLocation();
+</script>
+</body>
+</html>
