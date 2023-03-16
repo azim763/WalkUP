@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>  
+ <html lang="en">  
+ <head>  
+   <title>EasyAuth</title>  
+   <meta charset="UTF-8">  
+  
+ </head>
+  <body>    
+ <!-- Below is the initialization snippet for my Firebase project. It will vary for each project -->  
+ <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>  
+ <script>  
+  // Initialize Firebase  
+  var config = {  
+//    apiKey: "AIzaSyAPtNmUso5tA8d83vaJlgDHA_4C7HEgYNY",  
+//    authDomain: "authui-6818f.firebaseapp.com",  
+//    databaseURL: "https://authui-6818f.firebaseio.com",  
+//    storageBucket: "authui-6818f.appspot.com",  
+//    messagingSenderId: "596916061379"  
+
+
+   apiKey: "AIzaSyAZ0LxhvUmCEGi7bf9hH1okU0Arvi_Ch_E",
+  authDomain: "walkup-ibi.firebaseapp.com",
+   databaseURL: "https://walkup-ibi-default-rtdb.firebaseio.com",
+  projectId: "walkup-ibi",
+  storageBucket: "walkup-ibi.appspot.com",
+  messagingSenderId: "658025246463",
+  appId: "1:658025246463:web:8269679d7dcb229e6f66ca",
+  measurementId: "G-24VGMN29QG"
+  };  
+  firebase.initializeApp(config);  
+ </script>  
+ 
+ <!-- A simple example script to add text to the page that displays the user's Display Name and Email -->  
+ <script>  
+ // Track the UID of the current user.  
+ var currentUid = null;  
+ firebase.auth().onAuthStateChanged(function(user) {  
+  // onAuthStateChanged listener triggers every time the user ID token changes.  
+  // This could happen when a new user signs in or signs out.  
+  // It could also happen when the current user ID token expires and is refreshed.  
+  if (user && user.uid != currentUid) {  
+   // Update the UI when a new user signs in.  
+   // Otherwise ignore if this is a token refresh.  
+   // Update the current user UID.  
+   currentUid = user.uid;  
+   document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';  
+  } else {  
+   // Sign out operation. Reset the current user UID.  
+   currentUid = null;  
+   console.log("no user signed in");  
+  }  
+ });  
+ </script>  
+ <h1>Congrats you're done! Now get back to what you love building.</h1>  
+ 
+</body>
+ </html>
