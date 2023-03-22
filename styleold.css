@@ -645,8 +645,6 @@ padding: 1rem 0;
 }
 
 
-
-
 /* Azim */
 .capacity-count,
 .booked-count {
@@ -726,78 +724,5 @@ text-align: end;
   }
   .search-section{
     min-height: 80vh;
-  }
-}
-
-
-/* OFLLINE MODE - FARHANG ================= */
-body.offline {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("other/images/Offline.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-body.offline  .center {
-  color: var(--color-4);
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 1.5rem;
-}
-.center-left {
-  font-size: 4rem;
-}
-
-
-/* ABOUT US - FARHANG ================= */
-.aboutus-top {
-  height: 50vh;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background-image: url("other/images/aboutus.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.aboutus-top  {
-  color: var(--color-4);
-  text-align: center;
-  padding: 1rem;
-}
-.text-cotainer {
-  max-width: 60vw;
-  margin: 0 auto;
-  text-align: center;
-  color: #483C26;
-  padding: 3rem;
-  border-radius: 3rem;
-  position: relative;
-  top: -6rem;
-  background: #FFF;
-  box-shadow: 0px 0px 8px -1px #4c4c4c0f;
-}
-.text-cotainer h2 {
-  margin-bottom: 4rem;
-}
-.aboutus-top p{
-  font-size: 2rem;
-}
-.aboutus-top h1{
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-@media only screen and (max-width:  800px) {
-  .text-cotainer {
-    max-width: 90vw;
   }
 }

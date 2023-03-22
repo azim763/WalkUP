@@ -6,16 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../style.css" />
-  <link href="../js/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <!-- <link href="../js/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
   <link href="../js/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" />
-  <!-- Owl JS -->
+ 
   <script src="../js/owlcarousel/jquery.min.js"></script>
   <script src="../js/owlcarousel/owl.carousel.min.js"></script>
-  <script src="../js/script.js" defer></script>
+  <script src="../js/script.js" defer></script> -->
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
   <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+  <script src="../auth/config.js"></script>
+  <script src="../auth/common.js"></script>
+  <link href="../auth/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script src="../auth/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="../auth/firebaseui.css" />
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script> -->
+  <script src="../firebase/firebase.js" defer></script>
+  <script src="../js/common.js" defer></script>
+  <link rel="manifest" href="../app.webmanifest">
+  <script src="../rws.js"></script>
+  <style>
+    #photo{
+      height: unset;
+      width: unset;
+      border-radius: 50%;
+    }
+    .profile .userIMG {
+  border-radius: unset;
+  overflow: unset;
+}
+  </style>
   <title>Profile</title>
 </head>
 
@@ -25,29 +49,59 @@
       <h1>
         <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG" /></a>
       </h1>
+      <div id="container">
+        <div id="loading">Loading...</div>
+        <div id="loaded" class="hidden">
+          <div id="main">
+            <div id="user-signed-in">
+              <div id="user-info">
+                <div id="photo-container">
+                  <img  />
+                </div>
+                <!-- <div id="name"></div>
+                <div id="email"></div>
+                <div id="phone"></div> -->
+                <div id="is-new-user"></div>
+                <div class="clearfix"></div>
+                <!-- <button id="sign-out">Sign Out</button> -->
+              </div>
+            </div>
+            <div id="user-signed-out" class="hidden">
+              <a href="../auth/login.html">Sign In</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <a href="#"><i class="fa-solid fa-bars"></i></a>
     </div>
   </header>
   <main>
 
     <section class="backIMG">
-      <img src="../images/userprofileback.jpg" alt="">
+      <img src="../images/userprofileback.jpg" alt="" >
     </section>
     <div class="User-full-des">
       <div class="wrapper">
         <section class="user-inf">
           <div class="wrapper">
             <div class="userIMG">
-              <img src="../images/person.jpg" alt="">
+              <img  alt="" id="photo">
             </div>
             <div class="userID">
-              <p class="userName">John Blue</p>
-              <p class="userAdress">2312 Marine Avenue, Vancouver, BC</p>
+
+              <p class="userName"> <div class="userName" id="name"></div></p>  
+              <p class="userAdress">   <div class="userAdress" id="email"></div></p>
+              <div id="phone"></div>
+            
+              
+              <!-- <p class="userName">John Blue</p>
+              <p class="userAdress">2312 Marine Avenue, Vancouver, BC</p> -->
             </div>
           </div>
 
         </section>
-
+<!-- 
         <section class="interests">
           <div class="wrapper">
             <h2>My interests</h2>
@@ -55,55 +109,67 @@
               Hiking, Mountain climbing, Cycling, Swimming
             </p>
           </div>
-        </section>
+        </section> -->
         <section class="interests">
           <div class="wrapper">
             <h2>My Gears</h2>
-            <div class="userGearscontainer owl-carousel owl-theme">
-              <article>
+            <div class="userGearscontainer owl-carousel owl-theme" id="mygears">
+              <!-- <article>
                 <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
                   <h3>Ski Pants</h3>
                 </a>
-              </article>
-              <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article>
-              <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article>
-              <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article>
-              <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article>
-
+              </article> -->
+           
 
 
             </div>
           </div>
         </section>
+
+        <section class="interests">
+          <div class="wrapper">
+            <h2>My Adventures</h2>
+            <div class="userGearscontainer "  id="myadventures">
+              <!-- <article>
+                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                  <h3>Ski Pants</h3>
+                </a>
+              </article> -->
+           
+
+
+            </div>
+          </div>
+        </section>
+
+        <section class="interests">
+          <div class="wrapper">
+            <h2>My Conversations</h2>
+            <div class="userGearscontainer" >
+              <!-- <article>
+                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                  <h3>Ski Pants</h3>
+                </a>
+              </article> -->
+                        
+            </div>
+          </div>
+        </section>
+
+
       </div>
     </div>
   </main>
   <footer>
     <div class="wrapper">
-      <span href="index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG" /></span>
+      <span href="index.html" class="branding"
+        ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+      /></span>
       <nav class="footer-main-nav">
         <ul>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Gear Center</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="../index.html">Explore</a></li>
+          <li><a href="../gears/gear-home.html">Gear Center</a></li>
+          <li><a href="../other/aboutus.html">About Us</a></li>
         </ul>
       </nav>
       <nav class="footer-social">
@@ -125,7 +191,9 @@
     </div>
   </footer>
 </body>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-<script src="js/data/readcats.js" type="module"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+<!-- <script src="js/data/readcats.js" type="module"></script> -->
+<script src="../auth/loggedin.js"></script>
+<script  src="readuserdata.js"  type="module"></script>
 
 </html>
