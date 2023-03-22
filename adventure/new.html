@@ -41,6 +41,9 @@
       <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
       <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
 
+      <link rel="manifest" href="../app.webmanifest">
+      <script src="../rws.js"></script>
+
     </head>
     
     <body>
@@ -133,8 +136,11 @@
       </div>
       <!-- <input type="button" value="Submit" id="submit_form_btn"> -->
 
-      <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
-     
+
+      <div class="btn-wrapper">
+        <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
+    <button type="button" onclick="history.back()">Cansel</button>
+    </div>
     </form><br>
    
     <div class="checklist"></div>

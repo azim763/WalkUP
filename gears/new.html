@@ -7,8 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Gear</title>
 
+  <link rel="stylesheet" href="autocomplete/style.css" />
+  <script src="autocomplete/app.js" defer></script>
+
   <script  src="uploaddata.js"  type="module" defer></script>
-  <script src="upload.js" defer></script>
+  <!-- <script src="upload.js" defer></script> -->
 
   <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script> -->
   <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
@@ -25,7 +28,8 @@
 
 
   <link rel="stylesheet" href="style.css">
-  <script src="tomtommap.js" defer></script>
+  <link rel="stylesheet" href="../common.css">
+  <!-- <script src="tomtommap.js" defer></script> -->
   <script src="https://kit.fontawesome.com/a78fab2428.js" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
   <script  src="readdata.js"  type="module" defer></script>
@@ -42,6 +46,9 @@
       <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
 
       <script src="account.js" defer></script>
+
+      <link rel="manifest" href="../app.webmanifest">
+      <script src="../rws.js"></script>
 
     </head>
     
@@ -74,13 +81,7 @@
           </div>
         </div>
       </div>  
-      <nav class="hamburger-menu" id="secMenu">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../gears/gear-home.html">Gear Cneter</a></li>
-          <li><a href="../other/profile.html">Profile</a></li>
-        </ul>
-      </nav>
+
       <div id="form">
         <div class="page-heading">
           <h2>Post a New Gear</h2>
@@ -94,21 +95,25 @@
           <label for="Title">Title</label>
           <input type="text" id="title" class="input" name="Title" placeholder="Title..." required><br>
           
-          <div class="location">
-            <p id="status"></p>
-            <div id="map"></div>
-            <!-- <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3RHZfh9nIzpDJafXK4egw84mal9IUZPI&callback=initMap">
-    </script> -->
-            <p id="latitude"></p>
-            <p id="longitude"></p>
-          </div><br>
-          
+          <div class="autocomplete-container" id="autocomplete-container">
+
+            <div class="input-container">
+              <input type="text" placeholder="Enter an address here" id="addressInput" />
+              <div class="clear-button visible" id="clearButton" >
+                <svg viewBox="0 0 24 24" height="24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+             </div>
           <!-- <input type="file" id="myFile" name="files[]" multiple required> -->
          
                    <div class="camera-wrapper">
             <div class="final-step">
-              <input type="button" id="startbutton" value="Upload Profile Image" />
+              <input type="button" id="startbutton" value="Take a photo" />
               <div id="camera-widget-wrapper" class="camera-widget-wrapper">
                 <div id="camera-widget" class="camera-widget">
                   <div class="widget-head">
@@ -147,23 +152,26 @@
           <label for="description">Description</label>
           <textarea type="text" id="description" class="input" name="description" placeholder="Your experience..."> </textarea>
           
-          <label for="brand">Brand</label>
-          <input type="texts" id="brand" class="input" name="brand" min="0" required><br>
+          <label for="brandname">Brand</label>
+          <input type="texts" id="brandname" class="input" name="brandname" min="0" required><br>
           
           <label for="occupancy">Occupancy</label>
           <input type="text" id="occupancy" class="input" name="occupancy" min="0" required><br>
           
-          <label for="duration">Duration</label>
-          <input type="number" id="duration" class="input" name="duration" min="0" required><br>
+          <label for="material">material</label>
+          <input type="number" id="material" class="input" name="material" min="0" required><br>
           
-          <label for="weight">Weight</label>
-      <input type="number" id="weight" class="input" name="weight" min="0" max="5" required><br>
+          <label for="Size">Size</label>
+      <input type="text" id="Size" class="input" name="Size" min="0" max="5" required><br>
       
-      <label for="price">Price per day</label>
-      <input type="number" id="price" class="input" name="price" min="0" max="5" required><br>
-      
-      <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
-     <a href="gear-archive.html">Back</a>
+      <label for="Price">Price</label>
+      <input type="number" id="Price" class="input" name="Price" min="0" max="1000" required><br>
+      <div class="btn-wrapper">
+          <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
+      <button type="button" onclick="history.back()">Cansel</button>
+      </div>
+    
+     <!-- <a href="gear-archive.html">Back</a> -->
     </form><br>
    
     <div class="checklist"></div>

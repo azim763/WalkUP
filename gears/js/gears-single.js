@@ -17,13 +17,26 @@ const idAdv=searchParams.getAll("id");
   const toolsObjects=snap.val();
   var $div = document.createElement("div");
   $div.setAttribute("class", "Object-data");
+
+
+  let imgsrc="";
+  console.log(myObject.bycamera);
+  if (myObject.bycamera==true) {
+    imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
+  
+  }
+  else{
+    imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
+  }
+  
+
   $div.innerHTML =
     "<div >" + toolsObjects.Description + "</div>";
     $div.innerHTML =`
   <article>
   <div class="single-top">
     <div class="image-gallery">
-    <img src="images-gears/${toolsObjects.Image}" alt="" />
+    ${imgsrc}
     </div>
   </div>
   <div class="single-description">
@@ -34,7 +47,7 @@ const idAdv=searchParams.getAll("id");
       <div class="details">
         <h3>Details</h3>
         <div class="single-person">
-          <p><span>${toolsObjects.OwnerID}</span><span><img src="images/providers/${toolsObjects.venderImage}" alt="" /></span></p>
+          <p><span>Owner: </span><span>${toolsObjects.Owner}</span><span><img src="images/providers/${toolsObjects.venderImage}" alt="" /></span></p>
         </div>
         <div>
             <p><span>Brand Name: </span><span>${toolsObjects.brand}</span></p>
@@ -45,16 +58,9 @@ const idAdv=searchParams.getAll("id");
         <div>
             <p><span>Material: </span><span>${toolsObjects.Material}</span></p>
         </div>
-        <div>
-            <p><span>Shape: </span><span>${toolsObjects.brandname}</span></p>
-        </div>
-        <div>
+          <div>
             <p><span>Size: </span><span>${toolsObjects.size}</span></p>
         </div>
-        <div>
-            <p><span>Weight: </span><span>${toolsObjects.brandname}</span></p>
-        </div>
-
         <div class="price">
             <p><span>price: </span><span>${toolsObjects.price}/hour</span></p>
         </div>
@@ -109,17 +115,30 @@ myObjectsRef.orderByChild("CategoryID").equalTo(Number(CategoryID[0])).on("child
 //     <h2>${myObject.Title}</h2>
 //   </a>
 // </article>
+
+
+
+let imgsrc="";
+console.log(myObject.bycamera);
+if (myObject.bycamera==true) {
+  imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
+
+}
+else{
+  imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
+}
+
+
 console.log(myObject);
   $div.innerHTML = `<section class="gears-sec">
         <div class="gearCard">
           <div class="imgBanner">
-            <img src="images-gears/${myObject.Image}" alt="" />
+        ${imgsrc}
             <div class="icons">
               <i class="fa-regular fa-heart"></i>
               <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
-          </div>
-            
+          </div>           
             <h2>${myObject.Title}</h2>
             <div class="cardContentWrapper">
               <div class="brandname">${myObject.brand}</div>

@@ -2,7 +2,7 @@ import config  from "./configmodule.js";
 firebase.initializeApp(config);
 const dbRef = firebase.database().ref();
 
-const myObjectsActivityCategory = dbRef.child("ActivityCategory");
+const myObjectsActivityCategory = dbRef.child("ToolsCategory");
 const myObjectsPlaces = dbRef.child("place");
 const myObjectListUI = document.getElementById("myObjectList");
 

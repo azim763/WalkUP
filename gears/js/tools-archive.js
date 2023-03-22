@@ -36,11 +36,22 @@ if(idAdvTwo.length>0){
     //     <h2>${myObject.Title}</h2>
     //   </a>
     // </article>
+
+    let imgsrc="";
+    console.log(myObject.bycamera);
+    if (myObject.bycamera==true) {
+      imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
+
+    }
+    else{
+      imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
+    }
     console.log(myObject);
       $div.innerHTML = `<section class="gears-sec">
             <div class="gearCard">
               <div class="imgBanner">
-                <img src="images-gears/${myObject.Image}" alt="" />
+              ${imgsrc}
+               
                 <div class="icons">
                   <i class="fa-regular fa-heart"></i>
                   <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
@@ -89,11 +100,22 @@ myObjectsRef.orderByChild("CategoryID").equalTo(Number(idAdv[0])).on("child_adde
 //     <h2>${myObject.Title}</h2>
 //   </a>
 // </article>
+
+let imgsrc="";
+console.log(myObject.bycamera);
+if (myObject.bycamera==true) {
+  imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
+
+}
+else{
+  imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
+}
+
 console.log(myObject);
   $div.innerHTML = `<section class="gears-sec">
         <div class="gearCard">
           <div class="imgBanner">
-            <img src="images-gears/${myObject.Image}" alt="" />
+          ${imgsrc}
             <div class="icons">
               <i class="fa-regular fa-heart"></i>
               <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>

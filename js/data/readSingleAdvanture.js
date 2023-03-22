@@ -66,16 +66,15 @@ let booked=false;
         </p>
       
       </div>
-      <div class="single-person">
-        <p>Date: <span>${AdventureObject.Provider}</span></p>
+
+        <div class="single-person">
+        <p>Date: <span>${AdventureObject.LunchDate}</span></p>
         </div>
     </div>
   </div>
 </article>
-
-
-
   `;
+
   var location={Title: AdventureObject.Title  , Coordinate: [ AdventureObject.Longtitude,AdventureObject.Latitude] };
   var lc = new tt.Marker().setLngLat(location.Coordinate).addTo(map);
   var popup = new tt.Popup({ anchor: "top" }).setText(location.Title);
@@ -88,6 +87,7 @@ let booked=false;
   if (userlogged==AdventureObject.Provider) {
     isowner=true;
   }
+  cal_single.addEvent(AdventureObject.Title,AdventureObject.Description, 'Vancouver', AdventureObject.LunchDate, AdventureObject.LunchDate);
 
 });
 
@@ -107,7 +107,15 @@ if (userlogged==myObject.bookedPerson) {
   booked=true;
   document.getElementById("book-adventure").style.display= "none";
   document.getElementById("book-adventure-message").style.display= "block";
+  document.getElementById("book-adventure-ical").style.display= "block";
+
+
+
+
+
   
+  // cal_single = ics();
+
 }
 
   // let newCategoryOption = new booking(myObject.Title, myObject.ID);
@@ -126,6 +134,5 @@ var map = tt.map({
   center: HQ,
   zoom: 10,
 });
-
 
 

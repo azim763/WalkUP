@@ -528,8 +528,8 @@ footer .wrapper .footer-social{
   body .activities-cats, #toolsObject, .home-gears #myObjectList,
    .single #myObjectList .Object-data article,
    .single #recommendationList {
-    max-width: 1200px;
-    margin: 3rem auto;
+    max-width: 1320px;
+    margin: 1rem auto;
   }
 
   .single #recommendationList{

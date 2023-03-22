@@ -95,11 +95,15 @@ if (question.length>0) {
   //  article.innerHTML += `<a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a>`;
 
 var location={Title: adventure.Title  , Coordinate: [ adventure.Longtitude,adventure.Latitude] };
-  var lc = new tt.Marker().setLngLat(location.Coordinate).addTo(map);
+ 
+
+
+var lc = new tt.Marker().setLngLat(location.Coordinate).addTo(map);
   var popup = new tt.Popup({ anchor: "top" }).setText(location.Title);
  lc.setPopup(popup);
   adventureListUI.append(article);
 });
+
 }
 
 

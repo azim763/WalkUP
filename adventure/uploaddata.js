@@ -65,30 +65,8 @@ active : true,
 duration:Number( Duration),
 length: Length,
         level: d_level,
-        rate: Rate
-
-    
-        // "ActivityID": 1,
-        // "CheckList": "Backpack, hiking boots, water bottle, snacks",
-        // "Description": "Enjoy a beautiful hike through the scenic mountains.",
-        // "ID": 1,
-        // "Image": "Image1.jpg",
-        // "Latitude": 49.301705,
-        // "Longtitude": -123.141703,
-        // "LunchDate": "2023-03-10T12:00:00Z",
-        // "PhotosIDs": "1,2,3",
-        // "PlaceID": 1,
-        // "Provider": "Farhang",
-        // "ProviderID": 2,
-        // "Title": "Hiking in the mountains",
-        // "active": true,
-        // "capacity": 10,
-        // "duration": 7.6,
-        // "length": 3,
-        // "level": 1,
-        // "rate": 3.5
-      // }
-
+        rate: Rate,
+        LunchDate:launch_date
 
     })
       .then(() => {
@@ -100,7 +78,6 @@ length: Length,
     
         for (let i = 0; i < files.length; i++) {
             let file = files[i];
-    
             formData.append('files[]', file);
         }
     
@@ -112,7 +89,6 @@ length: Length,
         }).then(data => {
             console.log(data);
         });
-         alert("data submitted");
          window.location.href = 'adventure-archive.html?id='+adventure_category;
         //  windows.close();
       })

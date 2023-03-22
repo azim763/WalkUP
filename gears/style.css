@@ -67,7 +67,16 @@ input:focus {
     resize: none;
 }
 
-
+.camera-controls {
+  display: flex;
+  gap: 1rem;
+justify-content: space-around;
+  align-items: baseline;
+}
+.camera {
+  /* margin-left: 20px; */
+  margin-top: 20px;
+}
 
 /* ********************************* */
 /* ************ Button ************* */
@@ -140,7 +149,7 @@ input:focus {
 }
 input[type="submit"]{
   padding: .5rem;
-  margin: 1rem;
+  /* margin: 1rem; */
 }
 
 /* ********************************* */
