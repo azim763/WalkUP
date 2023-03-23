@@ -12,6 +12,8 @@
   <script src="../js/owlcarousel/jquery.min.js"></script>
   <script src="../js/owlcarousel/owl.carousel.min.js"></script>
   <script src="../js/script.js" defer></script> -->
+<link rel="stylesheet" href="../style.css">
+
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
   <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
@@ -29,17 +31,7 @@
   <script src="../js/common.js" defer></script>
   <link rel="manifest" href="../app.webmanifest">
   <script src="../rws.js"></script>
-  <style>
-    #photo{
-      height: unset;
-      width: unset;
-      border-radius: 50%;
-    }
-    .profile .userIMG {
-  border-radius: unset;
-  overflow: unset;
-}
-  </style>
+<link rel="stylesheet" href="profile.css">
   <title>Profile</title>
 </head>
 
@@ -82,7 +74,7 @@
       <img src="../images/userprofileback.jpg" alt="" >
     </section>
     <div class="User-full-des">
-      <div class="wrapper">
+      <div class="wrapper archive adventure-list">
         <section class="user-inf">
           <div class="wrapper">
             <div class="userIMG">
@@ -112,8 +104,8 @@
         </section> -->
         <section class="interests">
           <div class="wrapper">
-            <h2>My Gears</h2>
-            <div class="userGearscontainer owl-carousel owl-theme" id="mygears">
+            <h2>My Adventures</h2>
+            <div class="userGearscontainer usercontainers"  id="myadventures">
               <!-- <article>
                 <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
                   <h3>Ski Pants</h3>
@@ -128,8 +120,8 @@
 
         <section class="interests">
           <div class="wrapper">
-            <h2>My Adventures</h2>
-            <div class="userGearscontainer "  id="myadventures">
+            <h2>My Gears</h2>
+            <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mygears">
               <!-- <article>
                 <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
                   <h3>Ski Pants</h3>
@@ -141,7 +133,21 @@
             </div>
           </div>
         </section>
+        <section class="interests">
+          <div class="wrapper">
+            <h2>My Booked Adventures</h2>
+            <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mybookedadventures">
+              <!-- <article>
+                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                  <h3>Ski Pants</h3>
+                </a>
+              </article> -->
+           
 
+
+            </div>
+          </div>
+        </section>
         <section class="interests">
           <div class="wrapper">
             <h2>My Conversations</h2>
@@ -155,9 +161,7 @@
             </div>
           </div>
         </section>
-
-
-      </div>
+    </div>
     </div>
   </main>
   <footer>

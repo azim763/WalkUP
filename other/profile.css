@@ -1,0 +1,24 @@
+#photo{
+    height: unset;
+    width: unset;
+    border-radius: 50%;
+  }
+  .profile .userIMG {
+border-radius: unset;
+overflow: unset;
+}
+
+
+/* .usercontainers{
+    display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+} */
+
+.userGearscontainer a {
+    color: var(--color-3);
+    text-align: center;
+  }
+  .cart-top {
+    margin-bottom: 0;
+  }
