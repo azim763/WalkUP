@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Firebase Auth </title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+    <script src="auth/config.js"></script>
+    <script src="auth/common.js"></script>
+    <link href="auth/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="auth/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="firebaseui.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <script>
+   firebase.auth().signOut();
+  // close();
+</script> -->
+  </head>
+  <body>
+<p>
+  Please Wait ...
+</p>
+<script>
+  //  firebase.auth().signOut().then(function() {
+  //    close();
+  //  }
+   firebase.auth().signOut().then(function() {
+  console.log('Signed Out');
+  close();
+}, function(error) {
+  console.error('Sign Out Error', error);
+});
+</script>
+<!-- 
+    <div id="container">
+      <h3></h3>
+      <div id="loading">Loading...</div>
+      <div id="loaded" class="hidden">
+        <div id="main">
+          <div id="user-signed-in" >
+            <div id="user-info">
+              <div id="photo-container">
+                <img id="photo">
+              </div>
+              <div id="name"></div>
+              <div id="email"></div>
+              <div id="phone"></div>
+              <div id="is-new-user"></div>
+              <div class="clearfix"></div>
+            </div>
+            <p>
+              <button id="sign-out">Sign Out</button>
+              <button id="delete-account">Delete account</button>
+            </p>
+          </div>
+          <div id="user-signed-out" class="hidden">
+            <a href="login.html">Login</a>
+          </div>
+     
+        </div>
+      </div>
+    </div> -->
+    <!-- <script src="auth/loggedin.js"></script> -->
+  </body>
+</html>

@@ -1,27 +1,50 @@
 
+
+
+
+
+
+// const cacheName = "v1";    
+// const urlsToCache = [ "/" , "/index.html", "/css/main.css", "/js/main.js" ]; 
+
+
+// self.addEventListener('install', event => {
+//     // it is invoked when the browser installs the service worker
+//     // here we cache the resources that are defined in the urlsToCache[] array
+//     console.log(`[SW] Event fired: ${event.type}`);
+//     event.waitUntil(				  // waitUntil tells the browser to wait for the passed promise is done
+// 		  caches.open( cacheName )		//caches is a global object representing CacheStorage
+// 			  .then( ( cache ) => { 			// open the cache with the name cacheName*
+// 				  return cache.addAll( urlsToCache );      	// pass the array of URLs to cache. returns a promise
+// 		  }));
+//       console.log(`[SW] installed`);
+// });
+
+// self.addEventListener('activate', event => {
+//     // it is invoked after the service worker completes its installation. 
+//     // It's a place for the service worker to clean up from previous SW versions
+//     console.log(`[SW] Event fired: ${event.type}`);
+
+//     console.log(`[SW] activated`);
+// });
+
 // self.addEventListener('fetch', event => {
 //     // Fires whenever the app requests a resource (file or data)  normally this is where the service worker would check to see
 //     // if the requested resource is in the local cache before going to the server to get it. 
 //     console.log(`[SW] Fetch event for ${event.request.url}`);
 
+//     //1. No Strategy, simply forward the request to server (i.e. No Offline Capability)
+//     event.respondWith(fetch(event.request));
+ 
+
+
 // });
 
 
-/*
-Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-*/
 
-// Incrementing OFFLINE_VERSION will kick off the install event and force
-// previously cached resources to be updated from the network.
+
+
+
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
@@ -67,10 +90,6 @@ self.addEventListener('fetch', (event) => {
         const networkResponse = await fetch(event.request);
         return networkResponse;
       } catch (error) {
-        // catch is only triggered if an exception is thrown, which is likely
-        // due to a network error.
-        // If fetch() returns a valid HTTP response with a response code in
-        // the 4xx or 5xx range, the catch() will NOT be called.
         console.log('Fetch failed; returning offline page instead.', error);
 
         const cache = await caches.open(CACHE_NAME);
@@ -80,9 +99,4 @@ self.addEventListener('fetch', (event) => {
     })());
   }
 
-  // If our if() condition is false, then this fetch handler won't intercept the
-  // request. If there are any other fetch handlers registered, they will get a
-  // chance to call event.respondWith(). If no fetch handlers call
-  // event.respondWith(), the request will be handled by the browser as if there
-  // were no service worker involvement.
 });

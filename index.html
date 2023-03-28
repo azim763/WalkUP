@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Swiper CSS -->
   <!-- <link rel="stylesheet" href="js/swiper/swiper.min.css"> -->
-  
+
   <!-- Swiper JS -->
 
 
-  <link rel="manifest" href="./app.webmanifest">
+<!-- fav -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+   <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+
+
+  <link rel="manifest" href="./app.webmanifest" />
   <script src="rws.js"></script>
-
-
- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
   <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
   <script src="auth/config.js"></script>
@@ -22,106 +31,210 @@
   <link href="auth/style.css" rel="stylesheet" type="text/css" media="screen" />
   <script src="auth/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="auth/firebaseui.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="js/swiper/swiper-bundle.css" />
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
+  <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <script src="js/common.js" defer></script>
+  <link rel="stylesheet" href="common.css" />
+<link rel="stylesheet" href="menu.css">
+  <title>WalkUp</title>
+</head>
 
-
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="js/swiper/swiper-bundle.css">
-  
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
-    <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <script src="js/common.js" defer></script>
-    <link rel="stylesheet" href="common.css">
-
-    <title>WalkUp</title>
- 
-  </head>
-  <body class="home">
-    <header>
+<body class="home">
+  <!-- <header>
+    <div class="Desktop-header">
       <div class="wrapper">
         <h1>
-          <a href="index.html" class="branding"
-            ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
-          /></a>
-
+          <a href="index.html" class="branding"><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
         </h1>
-       <div id="container">
-          
-          <div id="loading">Loading...</div>
-          <div id="loaded" class="hidden">
-            <div id="main">
-              <div id="user-signed-in" >
-                <div id="user-info">
-                  <div id="photo-container">
-                    <img id="photo">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Expolre</a></li>
+            <li><a href="gears/gear-home.html">Gear Center</a></li>
+            <li><a href="other/profile.html">Profile</a></li>
+<li>
+   <div id="container">
+              <div id="loading">Loading...</div>
+              <div id="loaded" class="hidden">
+                <div id="main">
+                  <div id="user-signed-in" class="user-signed-in">
+                    <div id="user-info" class="user-info">
+                      <br />
+                      <div class="user-img-name desktopHeader-userIMG">
+                        <div id="photo-container" class="userIMG photo-container">
+                          <img id="photo" class="photo" />
+                        </div>
+                        <div id="name" class="userNAME name"></div>
+                      </div>
+
+                      <div id="email"></div>
+                      <div id="phone"></div>
+                      <div id="is-new-user"></div>
+                      <div class="clearfix"></div>
+                      <button class="signinout"
+                        onclick="window.open('logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                        Sign out
+                      </button>
+                    </div>
                   </div>
-                  <div id="name"></div>
-                  <div id="email"></div>
-                  <div id="phone"></div>
-                  <div id="is-new-user"></div>
-                  <div class="clearfix"></div> 
-                   <!-- <button id="sign-out">Sign Out</button> -->
-                   <button class="signinout" onclick="window.open('logged.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100');">Sign out</button>
+                  <div id="user-signed-out" class="hidden user-signed-out">
+                    <a href="auth/login.html">Sign In</a>
+                  </div>
                 </div>
-             
               </div>
-              <div id="user-signed-out" class="hidden user-signed-out">
-                <!-- <button id="sign-out" class="signinout" >Sign Out</button>  -->
-                <a href="auth/login.html" >Sign In</a>
-
-                <!-- <button  class="signinout"  onclick="window.open('auth/login.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100');">Sign In</button> -->
-              </div>          
             </div>
-          </div>
-        </div>  
-         <a href="#"  id="menuBut"><i class="fa-solid fa-bars"></i></a>
-      
+</li>
+           
+          </ul>
+        </nav>
       </div>
-    </header>
+    </div>
 
-    <nav class="hamburger-menu" id="secMenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gears/gear-home.html">Gear Cneter</a></li>
-        <li><a href="other/profile.html">Profile</a></li>
-      </ul>
-    </nav>
+    <div class="mobile-header">
+      <div class="wrapper">
+        <h1>
+          <a href="index.html" class="branding"><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
+        </h1>
 
-    <main>
-      <section class="search-section">
-        <div class="MainSearch-container">
-          <h2>“Embrace the Great Outdoors!”</h2>
-          <form action="adventure/adventure-archive.html" method="GET">
-            <label for="search-input" class="input-cont">
-              <input type="text" id="search-input" name="q" placeholder="Search by city, park or activity name..." />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </label>
-          </form>
-        </div>
-       
-      </section>
-      <section class="activities-cats slider-sec">
-        <div class="wrapper">
-          <h2>Explore Your Fit Activity</h2>
-          <div class="slider-container swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
-            <div class="swiper-wrapper">
+        <a href="#" id="menuBut"><i class="fa-solid fa-bars"></i></a>
+      </div>
+    </div>
+  </header>
 
+  <nav class="hamburger-menu" id="secMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gears/gear-home.html">Gear Center</a></li>
+      <li><a href="other/profile.html">Profile</a></li>
+    </ul>
+    <div class="user-details">
+      <div id="container2">
+        <div id="loading2">Loading...</div>
+        <div id="loaded2" class="hidden">
+          <div id="main2">
+            <div id="user-signed-in2">
+              <div id="user-info2">
+                <p>Welcome!</p>
+                <br />
+                <div class="user-img-name">
+                  <div id="photo-container2">
+                    <img id="photo2" />
+                  </div>
+                  <div id="name2"></div>
+                </div>
+
+                <div id="email2"></div>
+                <div id="phone2"></div>
+                <div id="is-new-user2"></div>
+                <div class="clearfix"></div>
+             
+                <button class="signinout"
+                  onclick="window.open('logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                  Sign out
+                </button>
+              </div>
             </div>
-         
+            <div id="user-signed-out2" class="hidden user-signed-out">
+            
+              <a href="auth/login.html">Sign In</a>
+
+             </div>
           </div>
         </div>
-      </section>
-      <section class="gears-sec banner-sec">
-        <div class="wrapper">
-          <p>
-            Missing important tools to make your experience safe and convenient?
-          </p>
-          <a href="gears/gear-home.html">Gears Center</a>
+      </div>
+    </div>
+  </nav> -->
+
+
+  <header>
+   <h1> <a href="index.html" class="branding"><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a></h1>
+    <nav>
+      <div class="top-nav">
+        <div>
+         
         </div>
+        <input id="menu-toggle" type="checkbox" aria-hidden="true">
+        <label class="menu-button-container" for="menu-toggle" aria-hidden="true">
+          <span class="menu-button"></span> <span class="aria-invisible">I</span>
+        </label>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+           <li><a href="gears/gear-home.html">Gear Center</a></li>
+          <li><a href="other/profile.html">Profile</a></li>
+         <li><a href="other/aboutus.html">About us</a></li>
+<li>
+ <div id="container">
+            <div id="loading">Loading...</div>
+            <div id="loaded" class="hidden">
+              <div id="main">
+                <div id="user-signed-in" class="user-signed-in">
+                  <div id="user-info" class="user-info">
+                    <br />
+                    <div class="user-img-name desktopHeader-userIMG">
+                      <div id="photo-container" class="userIMG photo-container">
+                        <img id="photo" class="photo" />
+                      </div>
+                      <div id="name" class="userNAME name"></div>
+                    </div>
+
+                    <div id="email"></div>
+                    <div id="phone"></div>
+                    <div id="is-new-user"></div>
+                    <div class="clearfix"></div>
+                    <button class="signinout"
+                      onclick="window.open('logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                      Sign out
+                    </button>
+                  </div>
+                </div>
+                <div id="user-signed-out" class="hidden user-signed-out">
+                  <a href="auth/login.html">Sign In</a>
+                </div>
+              </div>
+            </div>
+          </div>
+</li>        </ul>
+      </div>
+    </nav>
+   </header>
+
+
+  <main>
+    <section class="search-section">
+      <div class="MainSearch-container">
+        <h2>“Embrace the Great Outdoors!”</h2>
+        <form action="adventure/adventure-archive.html" method="GET">
+          <label for="search-input" class="input-cont">
+            <input type="text" id="search-input" name="q" placeholder="Search by city or activity name..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </label>
+        </form>
+      </div>
+    </section>
+    <section class="activities-cats slider-sec">
+      <h2>Explore Your Fit Activity</h2>
+      <div class="wrapper">
+        <div class="slider-container swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+          <div class="swiper-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sections-wrapper">
+      <section class="gears-sec banner-sec">
+        <div class="gear-sec-left">
+          <div class="wrapper">
+            <p>
+              Missing important tools to make your experience safe and
+              convenient?
+            </p>
+            <a href="gears/gear-home.html">Gears Center</a>
+          </div>
+        </div>
+        <div class="gear-sec-right"></div>
       </section>
       <section class="experience-sec banner-sec">
         <div class="experiencesec-left">
@@ -142,23 +255,31 @@
             <a href="#">Book Experience</a>
           </div>
         </div>
-       
-      
       </section>
-    </main>
-    <footer>
-      <div class="wrapper">
-        <span href="index.html" class="branding"
-          ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
-        /></span>
-        <nav class="footer-main-nav">
-          <ul>
-            <li><a href="index.html">Explore</a></li>
-            <li><a href="gears/gear-home.html">Gear Center</a></li>
-            <li><a href="other/aboutus.html">About Us</a></li>
-          </ul>
-        </nav>
+    </div>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <span href="index.html" class="branding"><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></span>
+
+      <div class="footer-cont">
+        <div class="footer-navs">
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gears/gear-home.html">Gears</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="other/aboutus.html">About us</a></li>
+              <li><a href="other/profile.html">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+
         <nav class="footer-social">
+          <h3>Follow us here:</h3>
           <ul>
             <li>
               <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -175,11 +296,17 @@
           </ul>
         </nav>
       </div>
-    </footer>
-  </body>
- 
-<script  src="js/data/readcats.js"  type="module"  defer></script>
-<script src="js/swiper/swiper-bundle.js" ></script>
+
+      <div class="footer-copyright">
+        <p>© 2023 Walkup. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="js/data/readcats.js" type="module" defer></script>
+<script src="js/swiper/swiper-bundle.js"></script>
 <script src="js/script.js"></script>
 <script src="auth/loggedin.js"></script>
+
 </html>
