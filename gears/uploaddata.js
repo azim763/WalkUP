@@ -20,7 +20,7 @@ const form1 = document.getElementById("enter-experience");
 form1.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    var title = document.getElementById("title").value;
+    // var title = document.getElementById("title").value;
     var adventure_category = document.getElementById('adventure_category').value;
     var title = document.getElementById('title').value;
     // var latitude = document.getElementById('latitude').innerText;
@@ -41,7 +41,7 @@ form1.addEventListener("submit", (event) => {
     // var checklist = document.getElementById('adventure_category').value;
   
 var provider=document.getElementById('name').innerHTML;
-
+var uid=document.getElementById('uid').innerHTML;
     // const files = document.querySelector('[type=file]').files;
 
 //     const d = new Date();
@@ -66,7 +66,8 @@ let seconds =Math.round( new Date().getTime() / 1000);
       occupancy :Occupancy,
       price: Price,
       size:Size,
-      Owner:provider
+      Owner:provider,
+      OwnerID:uid
         // AdventureIDs
         // :"1,2"
         // Availability

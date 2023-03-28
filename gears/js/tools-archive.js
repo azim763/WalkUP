@@ -46,16 +46,17 @@ if(idAdvTwo.length>0){
     else{
       imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
     }
-    console.log(myObject);
+    // <div class="icons">
+    //               <i class="fa-regular fa-heart"></i>
+    //               <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+    //             </div>
+    // console.log(myObject);
       $div.innerHTML = `<section class="gears-sec">
             <div class="gearCard">
               <div class="imgBanner">
               ${imgsrc}
                
-                <div class="icons">
-                  <i class="fa-regular fa-heart"></i>
-                  <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
+                
               </div>
                 
                 <h2>${myObject.Title}</h2>
@@ -67,7 +68,7 @@ if(idAdvTwo.length>0){
             </div>
           </section>`;
     
-    
+          $div.className="gear-article";
     
     gearsList.append($div);
     {/* <div class="more"><a href="gear-single.html?id=${tools.ID}">More</a></div> */}
@@ -85,7 +86,7 @@ myObjectsRef.orderByChild("CategoryID").equalTo(Number(idAdv[0])).on("child_adde
 //myObjectsRef.on("child_added", (snap) => { // this shows all
 
   let myObject = snap.val();
-  console.log(myObject)
+  // console.log(myObject)
 // console.log('ghgfg');
 //   let $li = document.createElement("li");
 //   $li.innerHTML = myObject.Title;
@@ -102,7 +103,7 @@ myObjectsRef.orderByChild("CategoryID").equalTo(Number(idAdv[0])).on("child_adde
 // </article>
 
 let imgsrc="";
-console.log(myObject.bycamera);
+// console.log(myObject.bycamera);
 if (myObject.bycamera==true) {
   imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
 
@@ -111,15 +112,12 @@ else{
   imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
 }
 
-console.log(myObject);
+// console.log(myObject);
   $div.innerHTML = `<section class="gears-sec">
         <div class="gearCard">
           <div class="imgBanner">
           ${imgsrc}
-            <div class="icons">
-              <i class="fa-regular fa-heart"></i>
-              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-            </div>
+           
           </div>
             
             <h2>${myObject.Title}</h2>
@@ -132,7 +130,7 @@ console.log(myObject);
       </section>`;
 
 
-
+$div.className="gear-article";
 gearsList.append($div);
 {/* <div class="more"><a href="gear-single.html?id=${tools.ID}">More</a></div> */}
 

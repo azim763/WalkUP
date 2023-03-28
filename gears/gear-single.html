@@ -17,8 +17,9 @@
   <script src="../auth/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="../auth/firebaseui.css" />
 
+  <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="Gearstyle.css">
 
-  <link rel="stylesheet" href="../gears/Gearstyle.css">
   <script src="../js/script.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <script src="../js/common.js" defer></script>
@@ -33,52 +34,77 @@
   <script src="../js/owlcarousel/owl.carousel.min.js"></script>
   <link rel="manifest" href="../app.webmanifest">
   <script src="../rws.js"></script>
+  <link rel="stylesheet" href="../menu.css">
+  <!-- fav -->
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+ <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
 
   <title>Explore</title>
 </head>
 
 <body class="single">
+
   <header>
-    <div class="wrapper ">
-      <h1>
-        <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Sign Walkup-08.svg" alt="Logo SVG" /></a>
-      </h1>
-      <div id="container">
-        <div id="loading">Loading...</div>
-        <div id="loaded" class="hidden">
-          <div id="main">
-            <div id="user-signed-in">
-              <div id="user-info">
-                <div id="photo-container">
-                  <img id="photo" />
+    <h1>
+      <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
+    </h1>
+    <nav>
+      <div class="top-nav">
+        <div></div>
+        <input id="menu-toggle" type="checkbox" aria-hidden="true" />
+        <label class="menu-button-container" for="menu-toggle" aria-hidden="true">
+          <span class="menu-button"></span>
+          <span class="aria-invisible">I</span>
+        </label>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../gears/gear-home.html">Gear Center</a></li>
+          <li><a href="../other/profile.html">Profile</a></li>
+          <li><a href="../other/aboutus.html">About us</a></li>
+          <li>
+            <div id="container">
+              <div id="loading">Loading...</div>
+              <div id="loaded" class="hidden">
+                <div id="main">
+                  <div id="user-signed-in" class="user-signed-in">
+                    <div id="user-info" class="user-info">
+                      <br />
+                      <div class="user-img-name desktopHeader-userIMG">
+                        <div id="photo-container" class="userIMG photo-container">
+                          <img id="photo" class="photo" />
+                        </div>
+                        <div id="name" class="userNAME name"></div>
+                      </div>
+
+                      <div id="email"></div>
+                      <div id="phone"></div>
+                      <div id="is-new-user"></div>
+                      <div id="uid"></div>
+                      <div class="clearfix"></div>
+                      <button class="signinout"
+                        onclick="window.open('../logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                        Sign out
+                      </button>
+                    </div>
+                  </div>
+                  <div id="user-signed-out" class="hidden user-signed-out">
+                    <a href="../auth/login.html">Sign In</a>
+                  </div>
                 </div>
-                <div id="name"></div>
-                <div id="email"></div>
-                <div id="phone"></div>
-                <div id="is-new-user"></div>
-                <div class="clearfix"></div>
-                <!-- <button id="sign-out">Sign Out</button> -->
               </div>
             </div>
-            <div id="user-signed-out" class="hidden">
-              <a href="../auth/login.html">Sign In</a>
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-      <a href="#"  id="menuBut"><i class="fa-solid fa-bars"></i></a>
-    </div>
+    </nav>
   </header>
-  <nav class="hamburger-menu" id="secMenu">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../gears/gear-home.html">Gear Cneter</a></li>
-      <li><a href="../other/profile.html">Profile</a></li>
-    </ul>
-  </nav>
+
   <main id="myObjectList">
-
-
 
   </main>
 
@@ -90,31 +116,51 @@
   <footer>
     <div class="wrapper">
       <span href="index.html" class="branding"
-        ><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+        ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
       /></span>
-      <nav class="footer-main-nav">
-        <ul>
-          <li><a href="../index.html">Explore</a></li>
-          <li><a href="../gears/gear-home.html">Gear Center</a></li>
-          <li><a href="../other/aboutus.html">About Us</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-social">
-        <ul>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-          </li>
-        </ul>
-      </nav>
+
+      <div class="footer-cont">
+        <div class="footer-navs">
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gears/gear-home.html">Gears</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../other/aboutus.html">About us</a></li>
+              <li><a href="../other/profile.html">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+
+        <nav class="footer-social">
+          <h3>Follow us here:</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    <div class="footer-copyright">
+      <p>
+        © 2023 Walkup. All rights reserved.
+      </p>
+    </div>
+     
     </div>
   </footer>
 

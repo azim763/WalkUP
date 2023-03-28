@@ -40,11 +40,18 @@ body {
   flex-flow: column nowrap;
   gap: 1rem;
 }
+
+.gear-article{
+  background-color: rgb(238, 238, 238);
+border-radius: 1rem;
+overflow: hidden;
+}
+
 .tools-archive {
   display: grid;
   /* flex-flow: column nowrap; */
   gap: 1rem;
-  min-height: 60vh;
+  min-height: 30vh;
 }
 /* .wrapper {
   padding: 0px 4%;
@@ -57,21 +64,21 @@ header .wrapper {
   align-items: center;
   height: 4rem;
 }
-header {
+/* header {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   right: 0px;
   left: 0px;
   z-index: 2;
-}
+} */
 
-header .branding img {
+/* header .branding img {
   width: 50px;
-}
+} */
 
-.branding img {
+/* .branding img {
   width: 150px;
-}
+} */
 
 header a i {
   font-size: 2rem;
@@ -127,13 +134,13 @@ header a i {
 .wrapper-post p{
     color:black;
 }
-.search-section input {
+/* .search-section input {
   padding: 0.4rem;
   border-radius: 2rem 0 0 2rem !important;
   
   border: none;
   outline: none;
-}
+} */
 .home article a {
   display: grid;
   position: relative;
@@ -161,9 +168,16 @@ header a i {
   color: var(--color-4);
   z-index: 1;
 }
-section {
+/* section {
   text-align: center;
+} */
+
+.slider-container {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  display: grid ;
 }
+
 .slider-sec .wrapper > h2 {
   margin-bottom: 1rem;
   color: var(--color-2);
@@ -362,9 +376,7 @@ footer a {
   left: 0;
   right: 0;
 }
-.single footer {
-  /* background-color: unset; */
-}
+
 .rating {
   display: flex;
 }
@@ -453,8 +465,21 @@ footer a {
   
   
   }
+  .slider-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    display: grid ;
+  }
 }
 @media screen and (min-width:800px) {
+
+
+  body .activities-cats, #toolsObject, .home-gears #myObjectList,
+   .single #myObjectList .Object-data article,
+   .single #recommendationList {
+    max-width: 1320px;
+    margin: 1rem auto;
+  }
 
 .home-gears #myObjectList{
   display: grid;
@@ -473,7 +498,7 @@ footer a {
 
 .tools-archive{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3,auto);
 }
 .single .object-data article {
   display: grid;
@@ -525,12 +550,7 @@ footer .wrapper .footer-social{
 }
 @media screen and (min-width:1200px) {
 
-  body .activities-cats, #toolsObject, .home-gears #myObjectList,
-   .single #myObjectList .Object-data article,
-   .single #recommendationList {
-    max-width: 1320px;
-    margin: 1rem auto;
-  }
+
 
   .single #recommendationList{
     padding: 0;
@@ -542,7 +562,7 @@ footer .wrapper .footer-social{
   }
   .home-gears .activities-cats .slider-container {
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   
 }
 .home-gears #toolsObject article a img {
@@ -551,7 +571,8 @@ footer .wrapper .footer-social{
 }
 .tools-archive{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  min-width: 1000px;
+  /* grid-template-columns: repeat(4,auto); */
 }
 
 
@@ -657,11 +678,11 @@ padding: 1rem 0;
 
 /* gear page */
 
-.home-gears header {
+/* .home-gears header {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-}
+} */
 
 .home-gears header a i, .archive-gears header a i , .single header a i  {
   color: white;
@@ -672,7 +693,7 @@ padding: 1rem 0;
 }
 
 .home-gears .search-section {
-  background: url("../gears/images-gears/cup-background.png") center center / cover;
+  background: url("../gears/images-gears/cup-background.jpg") center center / cover;
   min-height: 50vh;
   display: flex;
   flex-flow: column nowrap;
@@ -684,11 +705,11 @@ padding: 1rem 0;
   padding-bottom: 2rem;
 }
 
-.home-gears .activities-cats .slider-container {
+/* .home-gears .activities-cats .slider-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-}
+} */
 
 .home-gears .activities-cats article a:after {
   content: "";
@@ -793,6 +814,7 @@ padding: 1rem 0;
  display: flex;
  justify-content: flex-end;
  margin-right: 1rem;
+ text-align: center;
 }
 
 .gearCard .more a{
@@ -802,14 +824,30 @@ padding: 1rem 0;
   width: 100px;
   border-radius: 10px;
   color: white;
+  height: 30px;
 }
 /* archive page */
 .archive-gears .search-section {
-  background: unset;
+  /* background: unset;
   min-height: unset;
   display: flex;
   justify-content: space-around;    align-items: flex-start;
   margin-left: 30px;
+ */
+
+
+  background: url("../gears/images-gears/cup-background.jpg") center center / cover;
+min-height: 50vh;
+display: flex;
+flex-flow: column nowrap;
+justify-content: flex-end;
+align-items: center;
+gap: 0.5rem;
+position: relative;
+padding-bottom: 2rem;
+
+
+
  
 }
 .archive-gears .search-section input {
@@ -821,7 +859,7 @@ padding: 1rem 0;
 }
 /* home-gears */
  .home-gears #toolsObject article a img{
-  height: 150px;
+  height: 170px;
   display: block;
   object-fit: cover;
 
@@ -895,7 +933,7 @@ padding: 1rem 0;
   padding: 1rem 0;
 }
 
-.input-cont {
+/* .input-cont {
   display: grid;
   align-items: center;
 }
@@ -907,7 +945,7 @@ padding: 1rem 0;
 .input-cont i {
   padding-left: 0.8rem;
   font-size: 1.3rem;
-}
+} */
 .cart-caption {
   padding: 1rem 0.5rem;
 }
@@ -964,7 +1002,7 @@ padding: 1rem 0;
     order: unset;
   }
  .single #myObjectList{
-    padding: 100px 0;
+    padding-top: 6rem;
   }
   .single .image-gallery {
     border-radius: 1rem;

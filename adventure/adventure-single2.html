@@ -45,18 +45,10 @@
     <script src="../js/script.js" defer></script>
     <link rel="manifest" href="../app.webmanifest" />
     <script src="../rws.js"></script>
-    <link rel="stylesheet" href="../menu.css">
-    <!-- fav -->
-<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
- <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-
+ <link rel="stylesheet" href="../menu.css">
   </head>
   <body class="single">
+
     <header>
       <h1>
         <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
@@ -110,115 +102,36 @@
         </div>
       </nav>
     </header>
+  
 
     <main id="myObjectList">
-<div class="Object-data">
-  <article>
-    <div class="single-top">
-      <div class="image-gallery">
-      <img id="singleIMG"  alt="" />
-      <div class="single-archive-details">
-      <div class="wrapper">
-      <div class="single-archive-det-left">
-      <h2 class="adventure-title" id="singleTITLE"></h2>
-      <span class="region-province">Twassen, BC</span>
-      </div>
-      <div class="single-archive-det-right">
-        <i class="fa-solid fa-star"></i> <span id="singleRATE"></span>
-      </div>
-      </div>
-      </div>
-   
-      </div>
-    </div>
-  
-  
-    <div class="single-description">
-      <div class="wrapper">
-      <div class="signle-des-left">
-      <div class="single-adventure-full-des">
-      <h2 class="single-ad-title">Overview</h2>
-      <p class="full-description" id="singleDESCRIPTION">
-      </p>
-      </div>
-  
-      <div class=single-adventure-numbers>
-      <div class="single-item-feature"><i class="fa-solid fa-person-hiking"></i><p>level: </p><p class="level" id="singleLEVEL"> </p></div>
-        <div  class="single-item-feature"> <i class="fa-solid fa-route"></i> <p>length: </p> <p class="length" id="singleLENGTH"></p></div>
-       <div class="single-item-feature"> <i class="fa-regular fa-clock"></i><p>duration: </p> <p class="duration" id="singleDURATION"></p></div>
-       
-      
-      </div>   
-      <div class="booking-sec" id="bookingOptions">
-        <div class="map-container" id="bookingDetails">
-          <div class="capacity-count" id="capacityNUM">
-            Capacity:<span id="capacity-booking">0</span>
-          </div>
-          <div class="booked-count" id="bookedNUM">
-            Number of booking for this adventure:
-            <span id="number-booking">0</span>
-          </div>
-          <div class="capacity-count">
-            <button class="user-action-buttons orangebutton" id="book-adventure">
-              Book Now
-            </button>
-          </div>
-          <p class="hidden" id="book-adventure-message">
-            you already booked this adventure. please add the lunch time to your
-            calendar!
-          </p>
-          <a
-            href="#"
-            class="hidden"
-            id="book-adventure-ical"
-            onclick="javascript:cal_single.download('Adventure Day')"
-            >Add to Calandar</a
-          >
-  
-         
+      <div class="map-container" id="bookingDetails">
+        <div class="capacity-count" id="capacityNUM">
+          Capacity:<span id="capacity-booking">0</span>
         </div>
-      </div>
-  
-      </div>
-      <div class="single-des-right">
-      <div class="map-in-single"  id="moveHere">
+        <div class="booked-count" id="bookedNUM">
+          Number of booking for this adventure:
+          <span id="number-booking">0</span>
+        </div>
+        <div class="capacity-count">
+          <button class="user-action-buttons orangebutton" id="book-adventure">
+            Book Now
+          </button>
+        </div>
+        <p class="hidden" id="book-adventure-message">
+          you already booked this adventure. please add the lunch time to your
+          calendar!
+        </p>
+        <a
+          href="#"
+          class="hidden"
+          id="book-adventure-ical"
+          onclick="javascript:cal_single.download('Adventure Day')"
+          >Add to Calandar</a
+        >
+
         <div id="map"></div>
-
       </div>
-      <div class="signle-adventure-provider">
-      <div class="single-person" >
-      <h2 class="single-ad-title">More details</h2>
-      <p>Trail Experience Hosted by <span id="singlePROVIDER"></span></p>
-      <p>Date: <span id="singleDATE"></span></p>
-    
-    </div>
-      </div>
-      </div>
-         
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
     </main>
     <footer>
       <div class="wrapper">

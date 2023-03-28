@@ -3,59 +3,59 @@
 
 
 
-let map, marker;
+let map, marker,searchBox;
 
-function initMap() {
-  map = tt.map({
-    key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
-    container: 'map',
-      center: [ -122.4194, 37.4194],
-    zoom: 8,
-  });
+// function initMap() {
+//   map = tt.map({
+//     key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+//     container: 'map',
+//       center: [ -122.4194, 37.4194],
+//     zoom: 8,
+//   });
 
-  marker = new tt.Marker({ draggable: true }).setLngLat([ -122.4194,37.7749]).addTo(map);
+//   marker = new tt.Marker({ draggable: true }).setLngLat([ -122.4194,37.7749]).addTo(map);
 
-  marker.on('dragend', function (e) {
-    let lat = e.target.getLngLat().lat;
-    let lng = e.target.getLngLat().lng;
+//   marker.on('dragend', function (e) {
+//     let lat = e.target.getLngLat().lat;
+//     let lng = e.target.getLngLat().lng;
 
-    latitude.innerHTML=lat;
-    longitude.innerHTML=lng;
+//     latitude.innerHTML=lat;
+//     longitude.innerHTML=lng;
   
-    console.log("New latitude: " + lat);
-    console.log("New longitude: " + lng);
-  });
-}
+//     console.log("New latitude: " + lat);
+//     console.log("New longitude: " + lng);
+//   });
+// }
 
 
 // let map, marker;
 
-function initMapGeolocation() {
-  tt.setProductInfo('MyAwesomeApp', '1.0.0'); // optional
-  tt.services.fuzzySearch({
-    key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
-    query: 'my location',
-    language: 'en-US',
-    limit: 1
-  }).then(function (result) {
-    let userLocation = result.results[0].position;
-    map = tt.map({
-      key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
-      container: 'map',
-      center: userLocation,
-      zoom: 8,
-    });
+// function initMapGeolocation() {
+//   tt.setProductInfo('MyAwesomeApp', '1.0.0'); // optional
+//   tt.services.fuzzySearch({
+//     key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+//     query: 'my location',
+//     language: 'en-US',
+//     limit: 1
+//   }).then(function (result) {
+//     let userLocation = result.results[0].position;
+//     map = tt.map({
+//       key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+//       container: 'map',
+//       center: userLocation,
+//       zoom: 8,
+//     });
 
-        marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
-    marker.on('dragend', function (e) {
-       let lat = e.target.getLngLat().lat;
-      let lng = e.target.getLngLat().lng;
+//         marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
+//     marker.on('dragend', function (e) {
+//        let lat = e.target.getLngLat().lat;
+//       let lng = e.target.getLngLat().lng;
 
-      console.log("New latitude: " + lat);
-      console.log("New longitude: " + lng);
-    });
-  });
-}
+//       console.log("New latitude: " + lat);
+//       console.log("New longitude: " + lng);
+//     });
+//   });
+// }
 
 
 // let map, marker;
@@ -75,6 +75,24 @@ function initMapCurrentLocation() {
     // longitude.innerHTML=lng;
 
        marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
+   
+   
+    // Add an autocomplete search box to the map
+    searchBox = new tt.plugins.SearchBox(tt.services, {
+      searchOptions: {
+        key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+        limit: 10,
+        idxSet: 'POI',
+      },
+      autocompleteOptions: {
+        key: 'NcAivnVemAgNwcwusetBYc3fCAhTPlHB',
+        limit: 5,
+        language: 'en-US',
+        idxSet: 'POI',
+      },
+    });
+   
+       map.addControl(searchBox, 'top-left');
 
      marker.on('dragend', function (e) {
        let lat = e.target.getLngLat().lat;
@@ -86,6 +104,29 @@ function initMapCurrentLocation() {
       console.log("New latitude: " + lat);
       console.log("New longitude: " + lng);
     });
+
+// Listen for the searchbox result-selected event
+searchBox.on('tomtom.searchbox.resultselected', function (event) {
+  // Get the selected result's latitude and longitude
+  let position = event.data.result.position;
+  // let sLocation = [position.coords.longitude, position.coords.latitude];
+  let sLocation = [position.lng, position.lat];
+
+  // Center the map on the selected result's position
+  map.flyTo({ center: position });
+
+  // Set the marker's position to the selected result's position
+  marker.setLngLat(sLocation);
+  // marker = new tt.Marker({ draggable: true }).setLngLat(sLocation).addTo(map);
+   
+  latitude.innerHTML=position.lat;
+  longitude.innerHTML=position.lng;
+
+  // Do something with the new coordinates
+  console.log("New latitude: " + position[1]);
+  console.log("New longitude: " + position[0]);
+});
+
   });
 }
 

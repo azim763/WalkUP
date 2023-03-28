@@ -7,6 +7,10 @@
 *{
   margin: 0;
   padding: 0;
+  color: #483C26;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Lora', serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 body{
   /* background-image: url('/bg-img.jpg'); */
@@ -17,26 +21,50 @@ body{
   
 }
 #form{
-  padding:0 2px;
   margin: 40px auto;
-  border-radius: 15px;
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(0,0,0,0.5);
+  background-color: rgba(168, 164, 164, 0.5);
+  border-radius: 15px;
+}
+#enter-experience{
+ gap: 10px;
+}
+hr{
+  border: 1px solid white;
+  width: 100%;
 }
 .page-heading{
-  background-color: rgb(0,0,0,0.6);
-  color: #ffffff;
   text-align: center;
-  border-radius: 15px 15px 0px 0px;
   width: 100%;
 }
 h2{
   margin-top: 0;
-  padding: 15px;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  /* line-height: 30px; */
 }
+.numberData{
+  /* div for wrapping all inputs to arrange them in one line */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ gap: 5px;
+}
+.numberDataInput{
+  /* divs for input inside numberData Class */
+  width: 100% ;
+  justify-content: center;
+
+}
+#d_level{
+  padding: 4px;
+  margin: 5px 0px;
+}
+
 #enter-experience{
   padding: 1rem;
   display: flex;
@@ -46,11 +74,25 @@ h2{
   width: 60vw;
 }
 
+button, #submit_form_btn {
+  font-size: 15px;
+  padding:16px;
+  border-color: unset;
+  border: 2px;
+  border-radius: 14px;
+  background-color: #F06100;
+  color: white;
+  /* border-color: gray; */
+  display: block;
+  margin: 10px auto;
+  width: 100px;
+}
+
 .input{
     padding: 5px;
-    margin: 5px;
-    border: 1px solid black;
-    border-radius: 3px;
+    margin: 5px 0px;
+    width: 100%;
+    border: 1px solid white;
 }
 input:focus {
     border: 3px solid #555;
@@ -66,8 +108,16 @@ input:focus {
     background-color: #f8f8f8;
     resize: none;
 }
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
 
-
+#check_list_table>*{
+  padding: 0;
+  margin: 0;
+}
 
 /* ********************************* */
 /* ************ Button ************* */
@@ -133,14 +183,10 @@ input:focus {
 
  */
 
-#add_item_check_list{
-  padding: 0.5rem;
-  margin: 1rem;
-  width: 100px;
-}
+
 input[type="submit"]{
   padding: .5rem;
-  margin: 1rem;
+  
 }
 
 /* ********************************* */
@@ -150,7 +196,6 @@ input[type="submit"]{
   border: 2px solid grey;
   border-radius: 14px;
   width: 100%;
-  padding: 5px;
 }
 
 

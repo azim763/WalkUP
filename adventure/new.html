@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Adventure</title>
 
-  <script  src="uploaddata.js"  type="module" defer></script>
+  <script src="uploaddata.js" type="module" defer></script>
   <script src="upload.js" defer></script>
 
   <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script> -->
@@ -23,129 +23,198 @@
 
 
 
-
+  <link rel="stylesheet" href="../common.css">
   <link rel="stylesheet" href="style.css">
+
   <script src="tomtommap.js" defer></script>
   <script src="https://kit.fontawesome.com/a78fab2428.js" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
-  <script  src="readdata.js"  type="module" defer></script>
- 
- 
+  <script src="readdata.js" type="module" defer></script>
+
+
   <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
     defer</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
       defer</script>
       <script type="text/javascript" src="/maps.js" defer></script> -->
-      <!-- <script type="text/javascript" src="/googlemaps.js" defer></script> --> 
-      <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
-      <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
-      <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
+  <!-- <script type="text/javascript" src="/googlemaps.js" defer></script> -->
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
+  <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
+  <!-- <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> -->
 
-      <link rel="manifest" href="../app.webmanifest">
-      <script src="../rws.js"></script>
+  <link rel="stylesheet" type="text/css"
+  href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css" />
+<script
+  src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js"></script>
+<script
+  src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
 
-    </head>
-    
-    <body>
 
-      
-      <div id="container">
-          
-        <div id="loading">Loading...</div>
-        <div id="loaded" class="hidden">
-          <div id="main">
-            <div id="user-signed-in" >
-              <div id="user-info">
-                <div id="photo-container">
-                  <img id="photo">
-                </div>
-                <div id="name"></div>
-                <div id="email"></div>
-                <div id="phone"></div>
-                <div id="is-new-user"></div>
-                <div class="clearfix"></div> 
-                 <!-- <button id="sign-out">Sign Out</button> -->
-              </div>
-           
+<!-- 
+  <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css"/>
+<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script> -->
+
+<!-- <script src="tomtomsearch/SearchBox-web.js"></script>
+<script src="tomtomsearch/SearchBox.js"></script>
+<link rel="stylesheet" href="tomtomsearch/SearchBox.css"> -->
+<!-- <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox-web.js"></script>
+<link   rel="stylesheet"   type="text/css"   href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox.css"/> -->
+
+
+  <link rel="manifest" href="../app.webmanifest">
+  <script src="../rws.js"></script>
+
+  <!-- ==============GOOGLE FONTS =============-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+
+
+<!-- fav -->
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+ <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+</head>
+
+<body>
+
+
+  <div id="container">
+
+    <div id="loading">Loading...</div>
+    <div id="loaded" class="hidden">
+      <div id="main">
+        <div id="user-signed-in">
+          <div id="user-info">
+            <div id="photo-container">
+              <img id="photo">
             </div>
-            <div id="user-signed-out" class="hidden">
-              <a href="auth/login.html" >Sign In</a>
-            </div>
-         
+            <div id="name"></div>
+            <div id="email"></div>
+            <div id="phone"></div>
+            <div id="is-new-user"></div>
+            <div class="clearfix"></div>
+            <!-- <button id="sign-out">Sign Out</button> -->
           </div>
-        </div>
-      </div>  
 
-      <div id="form">
-        <div class="page-heading">
-          <h2>Create an adventure</h2>
         </div>
-        <form id="enter-experience">
-          
-          <label for="adventure_category">Adventure Category</label>
-          <select name="adventure_category" id="adventure_category" class="input">
-          </select><br>
-          <label for="place_menu">Place</label>
-          <select name="place_menu" id="place_menu" class="input">
-          </select><br>
-          
-          <label for="Title">Title</label>
-          <input type="text" id="title" class="input" name="Title" placeholder="Title..." required><br>
-          
-          <div class="location">
-            <p id="status"></p>
-            <div id="map"></div>
-            <!-- <script async
+        <div id="user-signed-out" class="hidden">
+          <a href="auth/login.html">Sign In</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="form">
+    <div class="page-heading">
+      <h2>Add Adventure</h2>
+    </div>
+    <hr>
+    <form id="enter-experience">
+
+      <div>
+        <label for="adventure_category">Location Name</label>
+        <input name="adventure_category" id="adventure_category" class="input">
+      </div>
+      <div>
+        <label for="place_menu">Place</label>
+        <select name="place_menu" id="place_menu" class="input">
+        </select>
+      </div>
+
+      <div>
+        <label for="Title">Title</label>
+        <input type="text" id="title" class="input" name="Title" placeholder="Title..." required>
+      </div>
+
+      <div class="location">
+        <p id="status"></p>
+        <div id="map"></div>
+        <!-- <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3RHZfh9nIzpDJafXK4egw84mal9IUZPI&callback=initMap">
     </script> -->
-            <p id="latitude"></p>
-            <p id="longitude"></p>
-          </div><br>
-          
-          <!-- <input type="file" id="myFile" name="filename"> -->
-          <!-- <button id="upload_file">Upload</button><br> -->
-          <input type="file" id="myFile" name="files[]" multiple required>
-         
-          
-          <label for="description">Description</label>
-          <textarea type="text" id="description" class="input" name="description" placeholder="Your experience..."> </textarea>
-          
-          <label for="capacity">Capacity</label>
-          <input type="number" id="capacity" class="input" name="capacity" min="0" required><br>
-          
-          <label for="length">Length</label>
-          <input type="number" id="length" class="input" name="length" min="0" required><br>
-          
-          <label for="duration">Duration</label>
-          <input type="number" id="duration" class="input" name="duration" min="0" required><br>
-          
-          <label for="d_level">Difficulty Level</label>
-      <input type="number" id="d_level" class="input" name="d_level" min="0" max="5" required><br>
-      
-      <label for="rate">Rating</label>
-      <input type="number" id="rate" class="input" name="rate" min="0" max="5" required><br>
-      
-      <label for="launch_date">Launch Date</label>
-      <input type="datetime-local" id="launch_date" class="input" name="launch_date" required><br>
-      
-      <label for="check_list_content">Check List</label>
-      <input type="text" id="check_list_content" class="input" name="check_list_content">
-      <button id="add_item_check_list">Add</button><br>
+        <p id="latitude" class="visually-hidden"></p>
+        <p id="longitude" class="visually-hidden"></p>
+      </div>
+
+      <!-- <input type="file" id="myFile" name="filename"> -->
+      <!-- <button id="upload_file">Upload</button><br> -->
+      <div><input type="file" id="myFile" name="files[]" multiple required></div>
+
+
+      <div>
+        <label for="description">Description</label>
+        <textarea type="text" id="description" class="input" name="description"
+          placeholder="Your experience..."> </textarea>
+      </div>
+
+      <div class="numberData">
+
+        <div class="numberDataInput"><label for="d_level">Level</label>
+          <select name="level" id="d_level" class="input" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <div class="numberDataInput"><label for="capacity">Capacity (no)</label>
+          <input type="number" id="capacity" class="input" name="capacity" min="0" required>
+        </div>
+
+        <div class="numberDataInput"><label for="length">Length (km)</label>
+          <input type="number" id="length" class="input" name="length" min="0" required>
+        </div>
+
+        <div class="numberDataInput"><label for="duration">Duration (h)</label>
+          <input type="number" id="duration" class="input" name="duration" min="0" required>
+        </div>
+
+      </div>
+
+
+      <div>
+        <label for="rate">Rating</label>
+        <input type="number" id="rate" class="input" name="rate" min="0" max="5" required>
+      </div>
+
+      <div>
+        <label for="launch_date">Launch Date</label>
+        <input type="datetime-local" id="launch_date" class="input" name="launch_date" required>
+      </div>
+
+      <div>
+        <label for="check_list_content">Check List</label>
+        <input type="text" id="check_list_content" class="input" name="check_list_content">
+      </div>
+
+
+      <button id="add_item_check_list">Add</button>
       <div class="list_table" id="check_list_table">
-        
+      <div class="checklist"></div>
       </div>
       <!-- <input type="button" value="Submit" id="submit_form_btn"> -->
 
 
       <div class="btn-wrapper">
-        <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
-    <button type="button" onclick="history.back()">Cansel</button>
-    </div>
+        <button type="button" onclick="history.back()">Cancel</button>
+        <input type="submit" id="submit_form_btn" name="submit" value="Submit">
+      </div>
     </form><br>
-   
-    <div class="checklist"></div>
+
   </div>
 </body>
 
- <script src="../auth/loggedin.js"></script>
+<script src="../auth/loggedin.js"></script>
+
 </html>

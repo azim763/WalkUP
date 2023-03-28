@@ -23,12 +23,15 @@ const idAdv=searchParams.getAll("id");
   console.log(myObject.bycamera);
   if (myObject.bycamera==true) {
     imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
-  
   }
   else{
-    imgsrc=  `<img src="images-gears/${myObject.Image}" alt="" />`;
+    imgsrc= `<img src="images-gears/${myObject.Image}" alt="" />`;
   }
-  
+  let messagebtnTitle="Send Message";
+
+  if (toolsObjects.OwnerID==document.getElementById("uid").innerHTML) {
+    messagebtnTitle="My Messages";
+  }
 
   $div.innerHTML =
     "<div >" + toolsObjects.Description + "</div>";
@@ -76,11 +79,9 @@ const idAdv=searchParams.getAll("id");
       
       
       </div>
-      <div class="sendmessageContainer">
-          <textarea id="w3review"  name="w3review" rows="6" cols="40" placeholder="write your message"></textarea> 
-      </div>
 
-      <div class="send">Send</div>
+      <a class="send" href="../other/chat.html?gid=${toolsObjects.ID}&ownerid=${toolsObjects.OwnerID}&userid=${document.getElementById("uid").innerHTML}&gt=${toolsObjects.Title}">${messagebtnTitle}</a>
+
       </div>
     </div>
   </div>
@@ -148,7 +149,7 @@ console.log(myObject);
         </div>
       </section>`;
 
-
+      $div.className="gear-article";
 
 recommendationList.append($div);
 {/* <div class="more"><a href="gear-single.html?id=${tools.ID}">More</a></div> */}
