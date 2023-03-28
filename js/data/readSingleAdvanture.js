@@ -32,49 +32,37 @@ let booked=false;
 // console.log(snap.key);
   // console.log(snap.val());
    AdventureObject=snap.val();
-  var $div = document.createElement("div");
-  $div.setAttribute("class", "Object-data");
-  $div.innerHTML =
-    "<div >" + AdventureObject.Description + "</div>";
- 
+  
+   
+  // image
+  document.getElementById("singleIMG").src = "images/"+AdventureObject.Image;
 
-    $div.innerHTML =`
-  <article>
-  <div class="single-top">
-    <div class="image-gallery">
-    <img src="images/${AdventureObject.Image}" alt="" />
-    </div>
-  </div>
-  <div class="single-description">
-    <div class="wrapper">
-      <div class="single-des-top">
-        <h2>${AdventureObject.Title}</h2>
-        <span>Twassen, BC</span>
-        <div class="rating">
-        <span>Rate: ${AdventureObject.rate}</span>
-      
-        </div>
-      </div>
-      <div class="single-person">
-        <p>Trail Experience Hosted by <span>${AdventureObject.Provider}</span></p>
-        <img src="images/providers/${AdventureObject.providerImage}" alt="" />
-      </div>
-      <div class="full-description">
-        <h3>Overview</h3>
-        <p>
-        ${AdventureObject.Description}
-        </p>
-      
-      </div>
+  // Title
+  document.getElementById("singleTITLE").innerHTML = AdventureObject.Title;
 
-        <div class="single-person">
-        <p>Date: <span>${AdventureObject.LunchDate}</span></p>
-        </div>
-    </div>
-  </div>
-</article>
-  `;
+  // Rate
+  document.getElementById("singleRATE").innerHTML = AdventureObject.rate;
 
+  // Description
+  document.getElementById("singleDESCRIPTION").innerHTML = AdventureObject.Description;
+
+  // Level
+  document.getElementById("singleLEVEL").innerHTML = AdventureObject.level;
+
+  // Length
+  document.getElementById("singleLENGTH").innerHTML = AdventureObject.length;
+
+  // Duration
+  document.getElementById("singleDURATION").innerHTML = AdventureObject.duration;
+
+  //Provider
+  document.getElementById("singlePROVIDER").innerHTML = AdventureObject.Provider;
+
+  //Date
+  document.getElementById("singleDATE").innerHTML = AdventureObject.LunchDate;
+
+
+  
   var location={Title: AdventureObject.Title  , Coordinate: [ AdventureObject.Longtitude,AdventureObject.Latitude] };
   var lc = new tt.Marker().setLngLat(location.Coordinate).addTo(map);
   var popup = new tt.Popup({ anchor: "top" }).setText(location.Title);
@@ -121,7 +109,10 @@ if (userlogged==myObject.bookedPerson) {
   // let newCategoryOption = new booking(myObject.Title, myObject.ID);
   // const selectCategory = document.querySelector('#adventure_category'); 
   // selectCategory.add(newCategoryOption,undefined);
+  
 
+
+  
 });
 
 
@@ -134,5 +125,7 @@ var map = tt.map({
   center: HQ,
   zoom: 10,
 });
+
+
 
 

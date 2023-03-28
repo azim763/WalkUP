@@ -58,9 +58,18 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var handleSignedInUser = function(user) {
   document.getElementById('user-signed-in').style.display = 'block';
   // document.getElementById('user-signed-out').style.display = 'none';
-  document.getElementById('name').textContent = user.displayName;
-  document.getElementById('email').textContent = user.email;
-  document.getElementById('phone').textContent = user.phoneNumber;
+  // document.getElementById('name').textContent = user.displayName;
+  // document.getElementById('email').textContent = user.email;
+  // document.getElementById('phone').textContent = user.phoneNumber;
+  // document.getElementById('uid').textContent = user.uid ;
+ 
+
+  updateHTML('name',user.displayName);
+  updateHTML('email',user.email);
+    updateHTML('phone', user.phoneNumber);
+      updateHTML('uid',user.uid );
+        
+  // console.log(user);
 
   if (user.photoURL) {
     var photoURL = user.photoURL;
@@ -77,10 +86,24 @@ var handleSignedInUser = function(user) {
   } else {
     document.getElementById('photo').style.display = 'none';
   }
-  document.getElementById('signedinblock').style.display='block';
+
+  updateHTMLStyle('signedinblock','block')
+  // document.getElementById('signedinblock').style.display='block';
 };
 
 
+function updateHTML(elmId, value) {
+  var elem = document.getElementById(elmId);
+  if(typeof elem !== 'undefined' && elem !== null) {
+    elem.innerHTML = value;
+  }
+}
+function updateHTMLStyle(elmId, value) {
+  var elem = document.getElementById(elmId);
+  if(typeof elem !== 'undefined' && elem !== null) {
+    elem.style.display = value;
+  }
+}
 /**
  * Displays the UI for a signed out user.
  */
@@ -145,8 +168,9 @@ function handleConfigChange() {
 /**
  * Initializes the app.
  */
-var initApp = function() {
+var initialApp = function() {
   document.getElementById('sign-out').addEventListener('click', function() {
+console.log('logout');
     firebase.auth().signOut();
   });
   // document.getElementById('delete-account').addEventListener(
@@ -156,4 +180,4 @@ var initApp = function() {
 
 };
 
-window.addEventListener('load', initApp);
+window.addEventListener('load', initialApp);

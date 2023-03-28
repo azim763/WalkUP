@@ -6,14 +6,32 @@
   .profile .userIMG {
 border-radius: unset;
 overflow: unset;
+position: absolute;
+bottom: -40px;
+left: 2rem;
 }
+.profile .userIMG img{
+ border: 1px solid white;
+  }
+.backIMG
+{
+  position: relative;
 
+  background: url("../images/userprofileback.jpg") center center / cover;
+  min-height: 30vh;
+}
 
 /* .usercontainers{
     display: flex;
 gap: 1rem;
 flex-wrap: wrap;
 } */
+
+.profile .userName {
+  
+  padding-left: 8rem;
+}
+
 
 .userGearscontainer a {
     color: var(--color-3);

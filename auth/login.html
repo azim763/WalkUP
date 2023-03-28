@@ -12,15 +12,63 @@
     <script src="firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="firebaseui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+ 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../style.css" />
+         <script src="../firebase/firebase.js" defer></script>
+    <script src="../js/common.js" defer></script>
+     <script src="../rws.js"></script>
+  <link rel="stylesheet" href="../menu.css">
+  <!-- fav -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+   <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+ 
+ 
+ 
+ 
+ 
+ 
   </head>
   <body>
-    <div id="container">
-      <h3>Firebase</h3>
+    
+    <header>
+      <h1>
+        <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
+      </h1>
+      <nav>
+        <div class="top-nav">
+          <div></div>
+          <input id="menu-toggle" type="checkbox" aria-hidden="true" />
+          <label class="menu-button-container" for="menu-toggle" aria-hidden="true">
+            <span class="menu-button"></span>
+            <span class="aria-invisible">I</span>
+          </label>
+          <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../gears/gear-home.html">Gear Center</a></li>
+            <li><a href="../other/profile.html">Profile</a></li>
+            <li><a href="../other/aboutus.html">About us</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="page"></div>
+    <div id="container" class="login-page-container">
+    
       <div id="loading">Loading...</div>
       <div id="loaded" class="hidden">
         <div id="main">
           <div id="user-signed-in" class="hidden">
-            <div id="user-info">
+            <!-- <div id="user-info">
               <div id="photo-container">
                 <img id="photo">
               </div>
@@ -29,50 +77,25 @@
               <div id="phone"></div>
               <div id="is-new-user"></div>
               <div class="clearfix"></div>
-            </div>
-            <p>
+            </div> -->
+            <!-- <p>
               <button id="sign-out">Sign Out</button>
               <button id="delete-account">Delete account</button>
-            </p>
+            </p> -->
           </div>
           <div id="user-signed-out" class="hidden">
-            <!-- <h4>You are signed out.</h4>
-            <fieldset>
-              <legend>Configuration</legend>
-              reCAPTCHA mode for Phone Auth:
-              <label for="recaptcha-normal">
-                <input type="radio" id="recaptcha-normal" name="recaptcha" value="normal">
-                Normal
-              </label>
-              <label for="recaptcha-invisible">
-                <input type="radio" id="recaptcha-invisible" name="recaptcha" value="invisible">
-                Invisible
-              </label><br>
-              Email signInMethod:
-              <label for="email-signInMethod-password">
-                <input type="radio" id="email-signInMethod-password" name="emailSignInMethod"
-                       value="password">
-                Password
-              </label>
-              <label for="email-signInMethod-emailLink">
-                <input type="radio" id="email-signInMethod-emailLink" name="emailSignInMethod"
-                       value="emailLink">
-                Email Link
-              </label><br>
-              <label for="email-disableSignUp-status">Disable email sign up:</label>
-              <input type="checkbox" id="email-disableSignUp-status" name="disableEmailSignUpStatus">
-              <label for="admin-restricted-operation-status">Admin restricted operation status:</label>
-              <input type="checkbox" id="admin-restricted-operation-status" name="adminRestrictedOperationStatus">
-            </fieldset> -->
-           
+            <h1 class="ads">
+              Hello adventurer,
+log in to explore the great outdoors.
+            </h1>
             <div id="firebaseui-spa">
-             
               <div id="firebaseui-container"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>

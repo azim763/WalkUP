@@ -1,17 +1,72 @@
 * {
   box-sizing: border-box;
 }
-
-body {
+body{
   margin: 0;
+  padding: 0;
+
+}
+
+.page {
+  position: relative;
+  background: url("background.jpg") center center / cover;
+  opacity: 0.6;
+
+display: grid;
+justify-content: center;
+align-content: center;
+justify-items: center;
+align-items: center;
+
+min-height: 100vh;
+line-height: 1.6;
 }
 
 #container {
-  max-width: 600px;
-  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0.5rem;
+  /* top:4rem; */
+  /* position: absolute; */
+  /* padding-top: 3rem; */
+  /* max-width: 400px; */
+  /* margin: 0 auto;
   text-align: center;
+  padding: 2rem;
+border-radius: 8px;
+background-color: rgba(0,0,0,0.6);
+left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;  */
+  /* width: 100px */
 }
 
+.login-page-container{
+   top:8rem;
+  position: absolute;
+  /* padding-top: 3rem; */
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+border-radius: 8px;
+background-color: rgba(0,0,0,0.6);
+left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  /* width: 100px */
+}
+.login-page-container #main {
+  padding-bottom: 2rem;
+}
+
+.ads{
+  color: white;
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 2rem 1rem;
+}
 .clearfix {
   clear: both;
 }
@@ -49,7 +104,15 @@ gap: .5rem;
   margin: 0;
   width: 32px;
 }
-
+#uid{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 @media (max-width: 300px) {
   #photo-container,
   #photo {
@@ -57,3 +120,5 @@ gap: .5rem;
     width: 40px;
   }
 }
+
+

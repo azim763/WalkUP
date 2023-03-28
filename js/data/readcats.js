@@ -1,9 +1,19 @@
 import config from "./configmodule.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  update,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 firebase.initializeApp(config);
 const dbRef = firebase.database().ref();
 
 const myObjectsRef = dbRef.child("ActivityCategory");
 const myObjectListUI = document.querySelector(".swiper-wrapper");
+
+
 
 myObjectsRef.on("child_added", (snap) => {
   let myObject = snap.val();

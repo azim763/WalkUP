@@ -12,10 +12,10 @@
   <script src="../js/owlcarousel/jquery.min.js"></script>
   <script src="../js/owlcarousel/owl.carousel.min.js"></script>
   <script src="../js/script.js" defer></script> -->
-<link rel="stylesheet" href="../style.css">
 
+<!-- 
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
-  <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
+  <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
   <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
@@ -32,54 +32,87 @@
   <link rel="manifest" href="../app.webmanifest">
   <script src="../rws.js"></script>
 <link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="../menu.css">
+<!-- fav -->
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+ <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
   <title>Profile</title>
 </head>
 
 <body class="profile">
   <header>
-    <div class="wrapper">
-      <h1>
-        <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG" /></a>
-      </h1>
-      <div id="container">
-        <div id="loading">Loading...</div>
-        <div id="loaded" class="hidden">
-          <div id="main">
-            <div id="user-signed-in">
-              <div id="user-info">
-                <div id="photo-container">
-                  <img  />
+    <h1>
+      <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
+    </h1>
+    <nav>
+      <div class="top-nav">
+        <div></div>
+        <input id="menu-toggle" type="checkbox" aria-hidden="true" />
+        <label class="menu-button-container" for="menu-toggle" aria-hidden="true">
+          <span class="menu-button"></span>
+          <span class="aria-invisible">I</span>
+        </label>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../gears/gear-home.html">Gear Center</a></li>
+          <li><a href="../other/profile.html">Profile</a></li>
+          <li><a href="../other/aboutus.html">About us</a></li>
+          <li>
+            <div id="container">
+              <div id="loading">Loading...</div>
+              <div id="loaded" class="hidden">
+                <div id="main">
+                  <div id="user-signed-in" class="user-signed-in">
+                    <div id="user-info" class="user-info">
+                      <br />
+                      <div class="user-img-name desktopHeader-userIMG">
+                        <div id="photo-container" class="userIMG photo-container">
+                          <!-- <img id="photo" class="photo" /> -->
+                        </div>
+                        <!-- <div id="name" class="userNAME name"></div> -->
+                      </div>
+
+                      <div id="email"></div>
+                      <div id="phone"></div>
+                      <div id="uid" class="visualy-hidden"></div>
+                      <div id="is-new-user"></div>
+                      <div class="clearfix"></div>
+                      <button class="signinout"
+                        onclick="window.open('../logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                        Sign out
+                      </button>
+                    </div>
+                  </div>
+                  <div id="user-signed-out" class="hidden user-signed-out">
+                    <a href="../auth/login.html">Sign In</a>
+                  </div>
                 </div>
-                <!-- <div id="name"></div>
-                <div id="email"></div>
-                <div id="phone"></div> -->
-                <div id="is-new-user"></div>
-                <div class="clearfix"></div>
-                <!-- <button id="sign-out">Sign Out</button> -->
               </div>
             </div>
-            <div id="user-signed-out" class="hidden">
-              <a href="../auth/login.html">Sign In</a>
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-
-      <a href="#"><i class="fa-solid fa-bars"></i></a>
-    </div>
+    </nav>
   </header>
+
   <main>
 
     <section class="backIMG">
-      <img src="../images/userprofileback.jpg" alt="" >
+      <!-- <img src="../images/userprofileback.jpg" alt="" > -->
+      <div class="userIMG">
+        <img  alt="" id="photo">
+      </div>
     </section>
     <div class="User-full-des">
       <div class="wrapper archive adventure-list">
         <section class="user-inf">
           <div class="wrapper">
-            <div class="userIMG">
-              <img  alt="" id="photo">
-            </div>
+           
             <div class="userID">
 
               <p class="userName"> <div class="userName" id="name"></div></p>  
@@ -145,19 +178,6 @@
            
 
 
-            </div>
-          </div>
-        </section>
-        <section class="interests">
-          <div class="wrapper">
-            <h2>My Conversations</h2>
-            <div class="userGearscontainer" >
-              <!-- <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article> -->
-                        
             </div>
           </div>
         </section>

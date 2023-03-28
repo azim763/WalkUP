@@ -7,16 +7,18 @@ var swiper = new Swiper(".mySwiper", {
   },
   breakpoints: {
     640: {
-      slidesPerView: 2,
+      slidesPerView: 2.5,
       spaceBetween: 20,
     },
     768: {
-      slidesPerView: 3,
+      slidesPerView: 3.5,
       spaceBetween: 20,
     },
     1024: {
-      slidesPerView: 5,
+      slidesPerView: 5.5,
       spaceBetween: 20,
     },
   },
 });
+
+

@@ -12,7 +12,12 @@ const myObjectsconversation = dbRef.child("conversation");
 
 setTimeout(() => {
   var userlogged=document.getElementById('name').innerHTML;
-console.log(userlogged);
+  var uid=document.getElementById('uid').innerHTML;
+// console.log(userlogged);
+if(uid.length<10)
+{
+  window.location.href="../auth/login.html"
+}
 
 
   myObjectsAdventure.orderByChild("Provider").equalTo(userlogged).on("child_added", snap => {   // this shows Adventures where ProviderID  is equal to 1
@@ -118,4 +123,4 @@ myObjectsBookedAdventurs.orderByChild("bookedPerson").equalTo(userlogged).on("ch
 
 
 
-}, 4000);
+}, 3000);

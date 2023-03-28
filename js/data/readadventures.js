@@ -24,24 +24,44 @@ if (idAdv.length>0) {
   let adventure = snap.val();
   console.log(adventure);
   let article = document.createElement("article");
+  // article.innerHTML += `
+  //   <img src="images/${adventure.Image}" alt="" />
+  //   <div class="cart-caption">
+  //       <div class="cart-top">
+  //     <h2><a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a></h2>
+     
+  //   </div>
+  //   <div class="cart-bottom">
+  //     <div class="cart-des">
+  //       <p class="level">Level: ${adventure.level}/5</p>
+  //       <p class="length">Length: ${adventure.length}Km</p>
+  //       <p class="duration">Duration: ${adventure.duration} hours</p>
+  //     </div>
+  //     <div class="rating">
+  //     Rate: ${adventure.rate}
+  //     </div>
+  //   </div>
+  //   </div>
+  // `;
   article.innerHTML += `
+  <a href="adventure-single.html?id=${adventure.ID}">
     <img src="images/${adventure.Image}" alt="" />
     <div class="cart-caption">
         <div class="cart-top">
-      <h2><a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a></h2>
+      <h2>${adventure.Title}</h2>
      
     </div>
     <div class="cart-bottom">
       <div class="cart-des">
-        <p class="level">Level: ${adventure.level}/5</p>
+      <p class="level"><i class="fa-solid fa-star"></i> ${adventure.rate} </p>
+        <p class="level">Level: ${adventure.level}</p>
         <p class="length">Length: ${adventure.length}Km</p>
         <p class="duration">Duration: ${adventure.duration} hours</p>
       </div>
-      <div class="rating">
-      Rate: ${adventure.rate}
-      </div>
+     
     </div>
     </div>
+    </a>
   `;
 
   //  article.innerHTML += `<a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a>`;
@@ -70,28 +90,47 @@ if (question.length>0) {
   // });
   myObjectsRef.orderByChild("Title").startAt(question[0]).endAt(question[0]+'\uf8ff').on("child_added", (snap) => {
   let adventure = snap.val();
-  console.log(adventure);
+  // console.log(adventure);
   let article = document.createElement("article");
-  article.innerHTML += `
-    <img src="images/${adventure.Image}" alt="" />
-    <div class="cart-caption">
-        <div class="cart-top">
-      <h2><a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a></h2>
+  // article.innerHTML += `
+  //   <img src="images/${adventure.Image}" alt="" />
+  //   <div class="cart-caption">
+  //       <div class="cart-top">
+  //     <h2><a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a></h2>
      
+  //   </div>
+  //   <div class="cart-bottom">
+  //     <div class="cart-des">
+  //       <p class="level">Level: ${adventure.level}/5</p>
+  //       <p class="length">Length: ${adventure.length}Km</p>
+  //       <p class="duration">Duration: ${adventure.duration} hours</p>
+  //     </div>
+  //     <div class="rating">
+  //     Rate: ${adventure.rate}
+  //     </div>
+  //   </div>
+  //   </div>
+  // `;
+  article.innerHTML += `
+  <a href="adventure-single.html?id=${adventure.ID}">
+  <img src="images/${adventure.Image}" alt="" />
+  <div class="cart-caption">
+      <div class="cart-top">
+    <h2>${adventure.Title}</h2>
+   
+  </div>
+  <div class="cart-bottom">
+    <div class="cart-des">
+    <p class="level"><i class="fa-solid fa-star"></i> ${adventure.rate}</p>
+      <p class="level">Level: ${adventure.level}</p>
+      <p class="length">Length: ${adventure.length}Km</p>
+      <p class="duration">Duration: ${adventure.duration} hours</p>
     </div>
-    <div class="cart-bottom">
-      <div class="cart-des">
-        <p class="level">Level: ${adventure.level}/5</p>
-        <p class="length">Length: ${adventure.length}Km</p>
-        <p class="duration">Duration: ${adventure.duration} hours</p>
-      </div>
-      <div class="rating">
-      Rate: ${adventure.rate}
-      </div>
-    </div>
-    </div>
+   
+  </div>
+  </div>
+  </a>
   `;
-
   //  article.innerHTML += `<a href="adventure-single.html?id=${adventure.ID}">${adventure.Title}</a>`;
 
 var location={Title: adventure.Title  , Coordinate: [ adventure.Longtitude,adventure.Latitude] };
