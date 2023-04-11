@@ -23,7 +23,7 @@ myObjectsRef.on("child_added", (snap) => {
   `;
 
   let $img = document.createElement("img");
-  $img.src = `images/${myObject.Title.toLowerCase()}.png`;
+  $img.src = `images/${myObject.Title.toLowerCase()}.jpg`;
   $img.alt = myObject.Title;
   let $h2 = document.createElement("h2");
   $h2.innerHTML = myObject.Title;

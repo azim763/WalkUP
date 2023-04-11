@@ -22,32 +22,13 @@ var AbujaZone = [
   { Address: "Location4", Coordinate: [-123.08, 49.35] },
 ];
 AbujaZone.forEach(function (child) {
-  var lc = new tt.Marker().setLngLat(child.Coordinate).addTo(map);
+  
+var element = document.createElement("div")
+element.className = "tomtommarker"
+var lc = new tt.Marker({ element: element }).setLngLat(location.Coordinate).addTo(map);
+
+  // var lc = new tt.Marker().setLngLat(child.Coordinate).addTo(map);
   var popup = new tt.Popup({ anchor: "top" }).setText(child.Address);
  lc.setPopup(popup);
   //createMarker(child.Coordinate,"red",child.Address)
 });
-
-// function createMarker(icon, position, color, popupText) {
-//   var markerElement = document.createElement("div");
-//   markerElement.className = "marker";
-
-//   var markerContentElement = document.createElement("div");
-//   markerContentElement.className = "marker-content";
-//   markerContentElement.style.backgroundColor = color;
-//   markerElement.appendChild(markerContentElement);
-
-//   var iconElement = document.createElement("div");
-//   iconElement.className = "marker-icon";
-//   iconElement.style.backgroundImage =
-//     'url("https://openlayers.org/en/latest/examples/data/icon.png")';
-//   // 'url(../assets/images/custom-markers/' + icon + ')';
-//   markerContentElement.appendChild(iconElement);
-
-//   var popup = new tt.Popup({ offset: 30 }).setText(popupText);
-//   // add marker to map
-//   new tt.Marker({ element: markerElement, anchor: "bottom" })
-//     .setLngLat(position)
-//     .setPopup(popup)
-//     .addTo(map);
-// }

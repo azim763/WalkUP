@@ -169,14 +169,20 @@ function handleConfigChange() {
  * Initializes the app.
  */
 var initialApp = function() {
+
+  var signout = document.getElementById('sign-out');
+  if(typeof signout !== 'undefined' && signout !== null) {
+    
+
   document.getElementById('sign-out').addEventListener('click', function() {
-console.log('logout');
+// console.log('logout');
     firebase.auth().signOut();
   });
-  // document.getElementById('delete-account').addEventListener(
-  //     'click', function() {
-  //       deleteAccount();
-  //     });
+
+  }
+
+
+ 
 
 };
 
