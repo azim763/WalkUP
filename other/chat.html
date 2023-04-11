@@ -21,7 +21,14 @@
     <script src="../firebase/firebase.js" defer></script>
     <script src="../js/common.js" defer></script>
     <link rel="manifest" href="../app.webmanifest">
-    <script src="../rws.js"></script>
+    <script>
+
+      window.addEventListener('load', () => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('../sw.js');
+        }
+      });
+      </script>
     <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../common.css">
 <link rel="stylesheet" href="chat.css">
@@ -94,7 +101,7 @@
     </header>
   
   
-   <a onclick="history.back()" class="a-back">back</a>
+   <!-- <a onclick="history.back()" class="a-back">back</a> -->
 
 <br>
 <br>

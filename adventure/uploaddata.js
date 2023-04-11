@@ -28,7 +28,7 @@ form1.addEventListener("submit", (event) => {
     var longitude = document.getElementById('longitude').innerText;
     var myFile = document.getElementById('myFile').value;
     var description = document.getElementById('description').value;
-    var capacity = document.getElementById('capacity').value;
+    var Capacity = document.getElementById('capacity').value;
     var Length = document.getElementById('length').value;
     var Duration = document.getElementById('duration').value;
     var d_level = document.getElementById('d_level').value;
@@ -53,7 +53,7 @@ let seconds =Math.round( new Date().getTime() / 1000);
       // Adventure_category: adventure_category,
       //  title: title,
       Description: description,
-      capacity: Number( capacity),
+      capacity: Number( Capacity),
       ID:Number( seconds),
       Image:files[0].name,
       Latitude: latitude.replace('°',''),
@@ -89,6 +89,7 @@ length: Length,
         }).then(data => {
             console.log(data);
         });
+        Swal.fire('your adventure successfully created!');
          window.location.href = 'adventure-archive.html?id='+adventure_category;
         //  windows.close();
       })

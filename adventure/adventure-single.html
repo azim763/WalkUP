@@ -24,7 +24,9 @@
     <script src="../auth/firebaseui.js"></script>
 
     <script src="../js/ical.js"></script>
-
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js "></script>
+    <link href="../css/sweetalert2.css" rel="stylesheet">
+    
     <script>
       cal_single = ics();
       //  cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/2023', '11/12/2023');
@@ -42,9 +44,16 @@
       rel="stylesheet"
       type="text/css"
     />
-    <script src="../js/script.js" defer></script>
+    <!-- <script src="../js/script.js" defer></script> -->
     <link rel="manifest" href="../app.webmanifest" />
-    <script src="../rws.js"></script>
+    <script>
+
+      window.addEventListener('load', () => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('../sw.js');
+        }
+      });
+      </script>
     <link rel="stylesheet" href="../menu.css">
     <!-- fav -->
 <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
@@ -54,7 +63,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-
+<link rel="stylesheet" href="../common.css">
   </head>
   <body class="single">
     <header>
@@ -116,9 +125,11 @@
   <article>
     <div class="single-top">
       <div class="image-gallery">
-      <img id="singleIMG"  alt="" />
-      <div class="single-archive-details">
-      <div class="wrapper">
+        <div class="singl-top-img-container">
+              <img id="singleIMG"  alt="" />
+        </div>
+       <div class="single-archive-details">
+      <div class="wrapper ">
       <div class="single-archive-det-left">
       <h2 class="adventure-title" id="singleTITLE"></h2>
       <span class="region-province">Twassen, BC</span>
@@ -142,7 +153,7 @@
       </p>
       </div>
   
-      <div class=single-adventure-numbers>
+      <div class="single-adventure-numbers">
       <div class="single-item-feature"><i class="fa-solid fa-person-hiking"></i><p>level: </p><p class="level" id="singleLEVEL"> </p></div>
         <div  class="single-item-feature"> <i class="fa-solid fa-route"></i> <p>length: </p> <p class="length" id="singleLENGTH"></p></div>
        <div class="single-item-feature"> <i class="fa-regular fa-clock"></i><p>duration: </p> <p class="duration" id="singleDURATION"></p></div>
@@ -155,11 +166,11 @@
             Capacity:<span id="capacity-booking">0</span>
           </div>
           <div class="booked-count" id="bookedNUM">
-            Number of booking for this adventure:
+            Number of booking for this adventure: 
             <span id="number-booking">0</span>
           </div>
           <div class="capacity-count">
-            <button class="user-action-buttons orangebutton" id="book-adventure">
+            <button class="regular-button" style="translate: -400px -100px;" id="book-adventure">
               Book Now
             </button>
           </div>
@@ -194,44 +205,26 @@
     </div>
       </div>
       </div>
-         
+      </div>  
+    </div>
   </article>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      
     </main>
+
     <footer>
       <div class="wrapper">
-        <span href="index.html" class="branding"
+        <span href="../index.html" class="branding"
           ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
         /></span>
-
+  
         <div class="footer-cont">
           <div class="footer-navs">
             <nav class="footer-main-nav">
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gears/gear-home.html">Gears</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../gears/gear-home.html">Gears</a></li>
               </ul>
             </nav>
             <nav class="footer-main-nav">
@@ -241,7 +234,7 @@
               </ul>
             </nav>
           </div>
-
+  
           <nav class="footer-social">
             <h3>Follow us here:</h3>
             <ul>
@@ -260,12 +253,13 @@
             </ul>
           </nav>
         </div>
-
+  
         <div class="footer-copyright">
           <p>© 2023 Walkup. All rights reserved.</p>
         </div>
       </div>
     </footer>
+  
   </body>
   <script src="../js/data/new-book-adventure.js" type="module"></script>
   <script src="../js/data/readSingleAdvanture.js" type="module"></script>

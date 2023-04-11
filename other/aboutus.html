@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
+
+
+
     <!-- <link href="../js/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="../js/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" />
    
@@ -39,7 +42,18 @@
    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  
+  <link rel="stylesheet" href="../footer.css">
+  <style>
+    .aboutus {
+       line-height: 1.7;
+    }
+    .aboutus p{
+      line-height: 1.7;
+font-size: 1.2rem;
+text-align: left;
+padding: .5rem 2rem;
+    }
+  </style>
 <title>About us</title>
  
   </head>
@@ -101,7 +115,7 @@
   
    
 
-    <main>
+    <main class="aboutus">
     <section class="aboutus-top">
         <h1>About WalkUp!</h1>
  <p>Creating a community 
@@ -114,43 +128,62 @@
 </h2>
 <p>
     The great outdoors is where memories are made, and our goal is to help you make them in the most exciting way. Whether you're an experienced adventurer or just starting out, our app has everything you need to plan and execute your adventure.
-
+    </p><p>
 From hiking to camping, rock climbing to kayaking, our app provides options to all your favorite outdoor activities. The newest feature offers checklists, advice, equipment recommendations and gear center to ensure that your adventure is safe, enjoyable, and unforgettable.
-
+    </p><p>
 At our core, we believe that there is nothing more rewarding than exploring the world around us, and our app is dedicated to making that exploration as accessible and enjoyable as possible. So, come join us on the journey, and let's explore the great outdoors together!
     </p>
     </div>
 </section>
     </main>
+ 
     <footer>
       <div class="wrapper">
-        <span href="index.html" class="branding"
-          ><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+        <span href="../index.html" class="branding"
+          ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
         /></span>
-        <nav class="footer-main-nav">
-          <ul>
-            <li><a href="../index.html">Explore</a></li>
-            <li><a href="../gears/gear-home.html">Gear Center</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-social">
-          <ul>
-            <li>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-          </ul>
-        </nav>
+  
+        <div class="footer-cont">
+          <div class="footer-navs">
+            <nav class="footer-main-nav">
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../gears/gear-home.html">Gears</a></li>
+              </ul>
+            </nav>
+            <nav class="footer-main-nav">
+              <ul>
+                <li><a href="../other/aboutus.html">About us</a></li>
+                <li><a href="../other/profile.html">Profile</a></li>
+              </ul>
+            </nav>
+          </div>
+  
+          <nav class="footer-social">
+            <h3>Follow us here:</h3>
+            <ul>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+  
+        <div class="footer-copyright">
+          <p>© 2023 Walkup. All rights reserved.</p>
+        </div>
       </div>
     </footer>
+  
   </body>
  
   <script src="../auth/loggedin.js"></script>

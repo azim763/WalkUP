@@ -12,16 +12,6 @@ console.log("ddd");
 const app = initializeApp(config);
 const database = getDatabase(app);
 
-//for comparing title
-
-
-// const gid=searchParams.getAll("gid");
-// const ownerid=searchParams.getAll("ownerid");
-// const userid=searchParams.getAll("userid");
-// const gid=document.getElementById('grid').innerHTML;
-// const ownerid=document.getElementById('ownid').innerHTML;
-// const userid=document.getElementById('usrid').innerHTML;
-
 
 
 
@@ -47,7 +37,9 @@ var Ownersend = true;
  }
  else{
   console.log("liveuid:"+liveuid);
-  return false;
+  var Ownersend = false;
+ Userid= liveuid;
+  // return false;
  }
 
 let seconds =Math.round( new Date().getTime() / 1000);
@@ -69,8 +61,8 @@ Sender:sender
 })
   .then(() => {
     console.log('done');
-    //  alert("data submitted");
-  //   window.location.href = 'gear-archive.html?id='+adventure_category;
+    userinput.value = "";
+    userinput.focus();
   })
   .catch((error) => {
     console.log(error);
@@ -79,7 +71,7 @@ Sender:sender
 }
 
 const btn1 = document.getElementById("chatsubmitbutton");
-//  console.log("vvvv");
+
  btn1.addEventListener("click",sendmessage);
 
 const userinput=document.getElementById("message-input")
@@ -87,15 +79,8 @@ const userinput=document.getElementById("message-input")
 userinput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
       event.preventDefault();
-      // alert('kkk');
-      sendmessage();
-      userinput.value = "";
     
-      userinput.focus();
+      sendmessage();
+    
   }
 });
-
-// submit_form_btn.addEventListener("click", (e) => {
-
-
-// });

@@ -14,15 +14,11 @@ setTimeout(() => {
   var userlogged=document.getElementById('name').innerHTML;
   var uid=document.getElementById('uid').innerHTML;
 // console.log(userlogged);
-if(uid.length<10)
-{
-  window.location.href="../auth/login.html"
-}
+
 
 
   myObjectsAdventure.orderByChild("Provider").equalTo(userlogged).on("child_added", snap => {   // this shows Adventures where ProviderID  is equal to 1
- // myObjectsAdventure.on("child_added", (snap) => {  // this shows all
-// myObjectsAdventure.on("child_added", (snap) => {  // this shows all
+
   let adventure = snap.val(); 
 
 
@@ -40,17 +36,12 @@ if(uid.length<10)
 
   myadventures.append(article);
 
-  // console.log(adventure.Title);
-  // if (userlogged==myObject.Provider) {
-   
-  //   }
+
   
 });
 
  myObjectsTools.orderByChild("Owner").equalTo(userlogged).on("child_added", snap => {   // this shows Adventures where ProviderID  is equal to 1
-  //myObjectsRef.limitToLast(1).on("child_added", snap => {  // this shows the one last
- // myObjectsTools.on("child_added", (snap) => {  // this shows all
-  
+
    let myObject = snap.val(); 
    
   let article = document.createElement("article");
@@ -67,7 +58,7 @@ if(uid.length<10)
   mygears.append(article);
 
    
-  //  console.log(myObject.Title);
+
  
   
   });
@@ -97,23 +88,13 @@ myObjectsBookedAdventurs.orderByChild("bookedPerson").equalTo(userlogged).on("ch
     });
 
 
-  // let article = document.createElement("article");
-  // article.innerHTML += `
-  //   <div class="cart-caption">
-  //       <div class="cart-top">
-  //     <h3><a href="../adventure/adventure-single.html?id=${myObject.ID}">${myObject.Title}</a></h3>
-     
-  //   </div>
-   
-  //   </div>
-  // `;
 
-  // mybookedadventures.append(article);
-
-   
-   console.log(myObject.Title);
  
-  
+   if(uid.length<10)
+   {
+     window.location.href="../auth/login.html"
+   }
+
   });
     
 

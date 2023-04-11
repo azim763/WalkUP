@@ -73,9 +73,13 @@ function initMapCurrentLocation() {
     latitude.innerHTML=userLocation[1];
     
     // longitude.innerHTML=lng;
+  
+var element = document.createElement("div")
+element.className = "tomtommarker"
 
-       marker = new tt.Marker({ draggable: true }).setLngLat(userLocation).addTo(map);
-   
+//marker = new tt.Marker({ draggable: true },{ element: element }).setLngLat(userLocation).addTo(map);
+marker = new tt.Marker({draggable: true, element: element }).setLngLat(userLocation).addTo(map);
+//  var lc = new tt.Marker({ element: element }).setLngLat(location.Coordinate).addTo(map);
    
     // Add an autocomplete search box to the map
     searchBox = new tt.plugins.SearchBox(tt.services, {
@@ -101,8 +105,8 @@ function initMapCurrentLocation() {
       latitude.innerHTML=lat;
       longitude.innerHTML=lng;
     
-      console.log("New latitude: " + lat);
-      console.log("New longitude: " + lng);
+      // console.log("New latitude: " + lat);
+      // console.log("New longitude: " + lng);
     });
 
 // Listen for the searchbox result-selected event
@@ -123,8 +127,8 @@ searchBox.on('tomtom.searchbox.resultselected', function (event) {
   longitude.innerHTML=position.lng;
 
   // Do something with the new coordinates
-  console.log("New latitude: " + position[1]);
-  console.log("New longitude: " + position[0]);
+  // console.log("New latitude: " + position[1]);
+  // console.log("New longitude: " + position[0]);
 });
 
   });

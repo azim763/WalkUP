@@ -32,7 +32,14 @@
   <script src="../js/owlcarousel/owl.carousel.min.js"></script>
   <script src="../js/common.js" defer></script>
   <link rel="manifest" href="../app.webmanifest" />
-  <script src="../rws.js"></script>
+  <script>
+
+  window.addEventListener('load', () => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../sw.js');
+    }
+  });
+  </script>
   <link rel="stylesheet" href="../menu.css" />
 
 <!-- fav -->
@@ -118,16 +125,20 @@
       <!-- <button class="new-adventure-link" onclick="window.open('new.html','Post New Adventure','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=600,left=100,top=100');">Post New Adventure</button> -->
     </div>
   </main>
+ 
+
   <footer>
     <div class="wrapper">
-      <span href="index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></span>
+      <span href="../index.html" class="branding"
+        ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
+      /></span>
 
       <div class="footer-cont">
         <div class="footer-navs">
           <nav class="footer-main-nav">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="gears/gear-home.html">Gears</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../gears/gear-home.html">Gears</a></li>
             </ul>
           </nav>
           <nav class="footer-main-nav">
@@ -162,6 +173,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 <script src="../js/data/readadventures.js" type="module"></script>
 <script src="../auth/loggedin.js"></script>

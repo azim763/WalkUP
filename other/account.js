@@ -1,18 +1,8 @@
-/*Code reference: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos */
-// The width and height of the captured photo. We will set the
-// width to the value defined here, but the height will be
-// calculated based on the aspect ratio of the input stream.
 
-let width = 400;    // We will scale the photo width to this
-let height = 0;     // This will be computed based on the input stream
-
-// |streaming| indicates whether or not we're currently streaming
-// video from the camera. Obviously, we start at false.
+let width = 400;   
+let height = 0;     
 
 let streaming = false;
-
-// The various HTML elements we need to configure or control. These
-// will be set by the startup() function.
 
 let video = null;
 let canvas = null;
@@ -80,7 +70,6 @@ function playVideo() {
         });
 }
 
-// 
 
 function clearphoto() {
     var context = canvas.getContext('2d');
@@ -91,11 +80,6 @@ function clearphoto() {
     photo.setAttribute('src', data);
 }
 
-// Capture a photo by fetching the current contents of the video
-// and drawing it into a canvas, then converting that to a PNG
-// format data URL. By drawing it on an offscreen canvas and then
-// drawing that to the screen, we can change its size and/or apply
-// other changes before drawing it.
 
 function takepicture() {
     var context = canvas.getContext('2d');
@@ -167,7 +151,7 @@ save.addEventListener('click', function () {
 
 
 const uploadImage = (file) => {
-    //call a firebase function and upload a file variable
+  
     console.log(file);
     
 }

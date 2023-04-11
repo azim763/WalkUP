@@ -18,47 +18,24 @@
   <link href="../auth/style.css" rel="stylesheet" type="text/css" media="screen" />
   <script src="../auth/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="../auth/firebaseui.css" />
-
-
-
-
-
-  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../common.css">
 
   <script src="tomtommap.js" defer></script>
   <script src="https://kit.fontawesome.com/a78fab2428.js" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js" defer></script>
   <script src="readdata.js" type="module" defer></script>
 
-
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
-    defer</script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-      defer</script>
-      <script type="text/javascript" src="/maps.js" defer></script> -->
-  <!-- <script type="text/javascript" src="/googlemaps.js" defer></script> -->
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
   <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
-  <!-- <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> -->
-
+ 
   <link rel="stylesheet" type="text/css"
   href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css" />
 <script
   src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js"></script>
 <script
   src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
-
-
-<!-- 
-  <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css"/>
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script> -->
-
-<!-- <script src="tomtomsearch/SearchBox-web.js"></script>
-<script src="tomtomsearch/SearchBox.js"></script>
-<link rel="stylesheet" href="tomtomsearch/SearchBox.css"> -->
-<!-- <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox-web.js"></script>
-<link   rel="stylesheet"   type="text/css"   href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox.css"/> -->
 
 
   <link rel="manifest" href="../app.webmanifest">
@@ -70,6 +47,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Ubuntu:wght@300&display=swap"
     rel="stylesheet">
 
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js "></script>
+    <link href="../css/sweetalert2.css" rel="stylesheet">
+
 
 <!-- fav -->
 <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
@@ -79,39 +59,66 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-
+<link rel="stylesheet" href="../menu.css">
 
 </head>
 
 <body>
 
 
-  <div id="container">
+  <header>
+    <h1>
+      <a href="../index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></a>
+    </h1>
+    <nav>
+      <div class="top-nav">
+        <div></div>
+        <input id="menu-toggle" type="checkbox" aria-hidden="true" />
+        <label class="menu-button-container" for="menu-toggle" aria-hidden="true">
+          <span class="menu-button"></span>
+          <span class="aria-invisible">I</span>
+        </label>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../gears/gear-home.html">Gear Center</a></li>
+          <li><a href="../other/profile.html">Profile</a></li>
+          <li><a href="../other/aboutus.html">About us</a></li>
+          <li>
+            <div id="container">
+              <div id="loading">Loading...</div>
+              <div id="loaded" class="hidden">
+                <div id="main">
+                  <div id="user-signed-in" class="user-signed-in">
+                    <div id="user-info" class="user-info">
+                      <br />
+                      <div class="user-img-name desktopHeader-userIMG">
+                        <div id="photo-container" class="userIMG photo-container">
+                          <img id="photo" class="photo" />
+                        </div>
+                        <div id="name" class="userNAME name"></div>
+                      </div>
 
-    <div id="loading">Loading...</div>
-    <div id="loaded" class="hidden">
-      <div id="main">
-        <div id="user-signed-in">
-          <div id="user-info">
-            <div id="photo-container">
-              <img id="photo">
+                      <div id="email"></div>
+                      <div id="phone"></div>
+                      <div id="is-new-user"></div>
+                      <div class="clearfix"></div>
+                      <button class="signinout"
+                        onclick="window.open('../logout.html','logout','scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=200,height=200,left=100,top=100');">
+                        Sign out
+                      </button>
+                    </div>
+                  </div>
+                  <div id="user-signed-out" class="hidden user-signed-out">
+                    <a href="../auth/login.html">Sign In</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="name"></div>
-            <div id="email"></div>
-            <div id="phone"></div>
-            <div id="is-new-user"></div>
-            <div class="clearfix"></div>
-            <!-- <button id="sign-out">Sign Out</button> -->
-          </div>
-
-        </div>
-        <div id="user-signed-out" class="hidden">
-          <a href="auth/login.html">Sign In</a>
-        </div>
-
+          </li>
+        </ul>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 
   <div id="form">
     <div class="page-heading">
@@ -122,7 +129,9 @@
 
       <div>
         <label for="adventure_category">Location Name</label>
-        <input name="adventure_category" id="adventure_category" class="input">
+       
+        <select name="adventure_category" id="adventure_category" class="input">
+        </select>
       </div>
       <div>
         <label for="place_menu">Place</label>
@@ -160,11 +169,10 @@
 
         <div class="numberDataInput"><label for="d_level">Level</label>
           <select name="level" id="d_level" class="input" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="beginner">beginner</option>
+            <option value="intermediate">intermediate</option>
+            <option value="expert">expert</option>
+        
           </select>
         </div>
 
@@ -193,26 +201,82 @@
         <input type="datetime-local" id="launch_date" class="input" name="launch_date" required>
       </div>
 
-      <div>
+    
+ <div >
         <label for="check_list_content">Check List</label>
+  <div class="checklistwrapper">
         <input type="text" id="check_list_content" class="input" name="check_list_content">
+  <button id="add_item_check_list" class="regular-button">Add</button>
+
       </div>
 
+      </div>
+     
 
-      <button id="add_item_check_list">Add</button>
+    
       <div class="list_table" id="check_list_table">
       <div class="checklist"></div>
       </div>
       <!-- <input type="button" value="Submit" id="submit_form_btn"> -->
 
-
       <div class="btn-wrapper">
-        <button type="button" onclick="history.back()">Cancel</button>
-        <input type="submit" id="submit_form_btn" name="submit" value="Submit">
-      </div>
+        
+        <button type="button" class="outlined-button width-100" onclick="history.back()">cancel</button>  
+        <input type="submit" id="submit_form_btn" name="submit" value="Submit" class="regular-button width-100"> 
+        </div>
+
     </form><br>
 
   </div>
+
+  
+  <footer>
+    <div class="wrapper">
+      <span href="../index.html" class="branding"
+        ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
+      /></span>
+
+      <div class="footer-cont">
+        <div class="footer-navs">
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../gears/gear-home.html">Gears</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../other/aboutus.html">About us</a></li>
+              <li><a href="../other/profile.html">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <nav class="footer-social">
+          <h3>Follow us here:</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2023 Walkup. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 <script src="../auth/loggedin.js"></script>

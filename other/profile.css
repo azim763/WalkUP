@@ -2,16 +2,18 @@
     height: unset;
     width: unset;
     border-radius: 50%;
+    width: 120px;
+    height: 120px;
   }
   .profile .userIMG {
 border-radius: unset;
 overflow: unset;
 position: absolute;
-bottom: -40px;
+bottom: -60px;
 left: 2rem;
 }
 .profile .userIMG img{
- border: 1px solid white;
+ border: 2px solid white;
   }
 .backIMG
 {
@@ -26,10 +28,13 @@ left: 2rem;
 gap: 1rem;
 flex-wrap: wrap;
 } */
-
+.user-inf{
+  border-bottom: unset;
+}
 .profile .userName {
   
-  padding-left: 8rem;
+  padding-left: 10rem;
+  padding-top: .3rem;
 }
 
 
@@ -39,4 +44,8 @@ flex-wrap: wrap;
   }
   .cart-top {
     margin-bottom: 0;
+  }
+
+ .user-inf .wrapper {
+    padding: 0px 1rem;
   }

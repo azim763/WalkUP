@@ -1,24 +1,13 @@
 
-:root {
-    --primary-color:#15A015;
-    --secondary-color:#68502B;
-    --bold-main-color:#FF6700;
-  }
-*{
-  margin: 0;
-  padding: 0;
-  color: #483C26;
-  font-family: 'Bebas Neue', cursive;
-  font-family: 'Lora', serif;
-  font-family: 'Ubuntu', sans-serif;
-}
 body{
   /* background-image: url('/bg-img.jpg'); */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  
+    margin: 0;
+  padding: 0;
+
 }
 #form{
   margin: 40px auto;
@@ -29,6 +18,13 @@ body{
   background-color: rgba(168, 164, 164, 0.5);
   border-radius: 15px;
 }
+#form label{
+  color:var(--color-2);
+  margin-left:7px;
+  font-size: 1.2rem;
+margin-top: 4px;
+}
+
 #enter-experience{
  gap: 10px;
 }
@@ -42,10 +38,20 @@ hr{
 }
 h2{
   margin-top: 0;
-  padding: 10px;
-  font-size: 24px;
-  font-weight: bold;
+  /* padding: 10px; */
+  /* font-size: 24px; */
+  /* font-weight: bold; */
   /* line-height: 30px; */
+ padding: 15px;
+  color: var(--color-2);
+}
+#myFile {
+  font-size: 1rem;
+  color: var(--color-2);
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 4px;
+  padding: .5rem;
 }
 .numberData{
   /* div for wrapping all inputs to arrange them in one line */
@@ -70,22 +76,13 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #ffffff;
+  /* color: #ffffff; */
   width: 60vw;
 }
 
-button, #submit_form_btn {
-  font-size: 15px;
-  padding:16px;
-  border-color: unset;
-  border: 2px;
-  border-radius: 14px;
-  background-color: #F06100;
-  color: white;
-  /* border-color: gray; */
-  display: block;
-  margin: 10px auto;
-  width: 100px;
+.checklistwrapper{
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .input{
@@ -93,10 +90,12 @@ button, #submit_form_btn {
     margin: 5px 0px;
     width: 100%;
     border: 1px solid white;
+    border-radius: 3px;
+    font-size: 1rem;
 }
-input:focus {
+/* input:focus {
     border: 3px solid #555;
-  }
+  } */
 
 #textarea {
     width: 60%;
@@ -105,7 +104,7 @@ input:focus {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
     resize: none;
 }
 .btn-wrapper{
@@ -118,70 +117,6 @@ input:focus {
   padding: 0;
   margin: 0;
 }
-
-/* ********************************* */
-/* ************ Button ************* */
-/* ********************************* */
-/* button {
-  border: none;
-  width: 162px;
-  height: 35px;
-  border: 2px solid #fff;
-  margin: auto;
-  margin-top: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: none;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: "Montserrat-SemiBold";
-  transform: perspective(1px) translateZ(0);
-  position: relative;
-  transition-property: color;
-  transition-duration: 0.3s; 
-}
-  button i {
-    margin-left: 10px;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transition-duration: 0.1s;
-    transition-duration: 0.1s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out; }
-  button:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #2098D1;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out; }
-  button:hover {
-    border-color: transparent; }
-    button:hover:before {
-      -webkit-transform: scaleX(1);
-      transform: scaleX(1); }
-    button:hover i {
-      -webkit-transform: translateX(4px);
-      transform: translateX(4px); }
-
- */
 
 
 input[type="submit"]{
@@ -226,16 +161,9 @@ input[type="submit"]{
 @media screen and (min-width: 800px) {
   #form{
     width: 600px;
+    margin-top: 6rem;
   }
   #enter-experience{
     width: 600px;
   }
 }
-/* @media screen and (min-width: 1200px) {
-  #form{
-    width: 50vw;
-  }
-  #enter-experience{
-    width: 37vw;
-  }
-} */

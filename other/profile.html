@@ -30,7 +30,15 @@
   <script src="../firebase/firebase.js" defer></script>
   <script src="../js/common.js" defer></script>
   <link rel="manifest" href="../app.webmanifest">
-  <script src="../rws.js"></script>
+  <script>
+
+    window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../sw.js');
+      }
+    });
+    </script>
+<link rel="stylesheet" href="../footer.css">
 <link rel="stylesheet" href="profile.css">
 <link rel="stylesheet" href="../menu.css">
 <!-- fav -->
@@ -41,6 +49,12 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
+ 
+<style>
+  .profile-content{
+    padding: 2rem 10%;
+  }
+</style>
   <title>Profile</title>
 </head>
 
@@ -77,8 +91,7 @@
                         <!-- <div id="name" class="userNAME name"></div> -->
                       </div>
 
-                      <div id="email"></div>
-                      <div id="phone"></div>
+                    
                       <div id="uid" class="visualy-hidden"></div>
                       <div id="is-new-user"></div>
                       <div class="clearfix"></div>
@@ -109,7 +122,7 @@
       </div>
     </section>
     <div class="User-full-des">
-      <div class="wrapper archive adventure-list">
+      <div class=" archive adventure-list">
         <section class="user-inf">
           <div class="wrapper">
            
@@ -135,85 +148,112 @@
             </p>
           </div>
         </section> -->
-        <section class="interests">
-          <div class="wrapper">
-            <h2>My Adventures</h2>
-            <div class="userGearscontainer usercontainers"  id="myadventures">
-              <!-- <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article> -->
-           
 
-
+<div class="profile-content">
+  
+          <section class="interests">
+            <div class="wrapper">
+              <h2>My Adventures</h2>
+              <div class="userGearscontainer usercontainers"  id="myadventures">
+                <!-- <article>
+                  <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                    <h3>Ski Pants</h3>
+                  </a>
+                </article> -->
+  
+  
+  
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section class="interests">
-          <div class="wrapper">
-            <h2>My Gears</h2>
-            <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mygears">
-              <!-- <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article> -->
-           
-
-
+          </section>
+  
+          <section class="interests">
+            <div class="wrapper">
+              <h2>My Gears</h2>
+              <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mygears">
+                <!-- <article>
+                  <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                    <h3>Ski Pants</h3>
+                  </a>
+                </article> -->
+  
+  
+  
+              </div>
             </div>
-          </div>
-        </section>
-        <section class="interests">
-          <div class="wrapper">
-            <h2>My Booked Adventures</h2>
-            <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mybookedadventures">
-              <!-- <article>
-                <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
-                  <h3>Ski Pants</h3>
-                </a>
-              </article> -->
-           
-
-
+          </section>
+          <section class="interests">
+            <div class="wrapper">
+              <h2>My Booked Adventures</h2>
+              <div class="userGearscontainer owl-carousel owl-theme  usercontainers" id="mybookedadventures">
+                <!-- <article>
+                  <a href="#"><img src="../images/jacket.JPG" alt="Jacket">
+                    <h3>Ski Pants</h3>
+                  </a>
+                </article> -->
+  
+  
+  
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+</div>
+
+
+
     </div>
     </div>
   </main>
+ 
+  
   <footer>
     <div class="wrapper">
-      <span href="index.html" class="branding"
-        ><img src="logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"
+      <span href="../index.html" class="branding"
+        ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
       /></span>
-      <nav class="footer-main-nav">
-        <ul>
-          <li><a href="../index.html">Explore</a></li>
-          <li><a href="../gears/gear-home.html">Gear Center</a></li>
-          <li><a href="../other/aboutus.html">About Us</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-social">
-        <ul>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-          </li>
-        </ul>
-      </nav>
+
+      <div class="footer-cont">
+        <div class="footer-navs">
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../gears/gear-home.html">Gears</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../other/aboutus.html">About us</a></li>
+              <li><a href="../other/profile.html">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <nav class="footer-social">
+          <h3>Follow us here:</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2023 Walkup. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
+
 </body>
 <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
 <!-- <script src="js/data/readcats.js" type="module"></script> -->
