@@ -1,18 +1,10 @@
-/*Code reference: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos */
-// The width and height of the captured photo. We will set the
-// width to the value defined here, but the height will be
-// calculated based on the aspect ratio of the input stream.
 
-let width = 400;    // We will scale the photo width to this
-let height = 0;     // This will be computed based on the input stream
+let width = 400; 
+let height = 0;   
 
-// |streaming| indicates whether or not we're currently streaming
-// video from the camera. Obviously, we start at false.
 
 let streaming = false;
 
-// The various HTML elements we need to configure or control. These
-// will be set by the startup() function.
 
 let video = null;
 let canvas = null;
@@ -22,7 +14,7 @@ let capturebutton = null;
 
 video = document.getElementById('video');
 canvas = document.getElementById('canvas');
-photo = document.getElementById('photo');
+photo = document.getElementById('photo1');
 startbutton = document.getElementById('startbutton');
 capturebutton = document.getElementById('capturebutton');
 
@@ -91,12 +83,6 @@ function clearphoto() {
     photo.setAttribute('src', data);
 }
 
-// Capture a photo by fetching the current contents of the video
-// and drawing it into a canvas, then converting that to a PNG
-// format data URL. By drawing it on an offscreen canvas and then
-// drawing that to the screen, we can change its size and/or apply
-// other changes before drawing it.
-
 function takepicture() {
     var context = canvas.getContext('2d');
     if (width && height) {
@@ -130,8 +116,6 @@ function resetWidgetControls() {
     document.getElementById("camera").style.display = "block";
     document.getElementById("canvas").style.display = "none";
 
-    
-    document.getElementById("save").classList.add("disabled");
 }
 
 cancel.addEventListener('click', function () {
@@ -139,29 +123,10 @@ cancel.addEventListener('click', function () {
     document.getElementById("camera-widget-wrapper").style.display = "none";
     stopCamera();
     clearphoto();
-    // resetWidgetControls();
 });
 
 retake.addEventListener('click', function () {
     playVideo();
-    resetWidgetControls();
-});
-
-save.addEventListener('click', function () {
-
-    let capturedImg = document.getElementById("photo").src;
-
-    fetch(capturedImg)
-        .then(res => res.blob())
-        .then(blob => uploadImage(blob))
-        .then(() => {
-            document.getElementById("camera-widget-wrapper").style.display = "none";
-            resetWidgetControls();
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
     resetWidgetControls();
 });
 

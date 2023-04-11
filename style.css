@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 html {
   font-family: Cabin, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 :root {
   --color-1: #15a015;
@@ -162,22 +162,27 @@ padding-top: 2rem;
 /* .banner-sec {
 } */
 .gears-sec {
-  background-color: rgba(218, 237, 218, 0.91);
+  /* background-color: rgba(218, 237, 218, 0.91); */
   color: var(--color-1);
   /* height: 25rem; */
   /* grid-template-columns: 1fr 1fr; */
   display: grid;
 }
 
+
+.home .gears-sec {
+  background-color: rgba(218, 237, 218, 0.91);
+}
+
 .sections-wrapper
 .gears-sec {
 
-  height: 25rem;
+  height: 35rem;
    grid-template-columns: 1fr 1fr; 
 
 }
 .experience-sec {
-  height: 25rem;
+  height: 35rem;
   overflow: hidden;
 }
 .banner-sec a {
@@ -270,6 +275,10 @@ footer a {
 .archive h2 {
   color: var(--color-1);
   font-size: 1.2rem;
+  line-height: 1.3;
+}
+.level i{
+  color: var(--color-2);
 }
 .archive article > .cart-top {
   display: flex;
@@ -363,6 +372,11 @@ footer a {
 }
 .single-person p {
   text-align: left;
+  line-height: 1.6;
+}
+
+.single-archive-det-left {
+  line-height: 1.7;
 }
 /* .home-gears header {
   position: fixed;
@@ -423,7 +437,7 @@ footer a {
 }
 
 .gearCard {
-  background: linear-gradient(transparent 10%, rgb(227, 214, 214));
+  /* background: linear-gradient(transparent 10%, rgb(227, 214, 214)); */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 1rem;
@@ -468,7 +482,7 @@ footer a {
   color: green;
   font-size: 0.7rem;
 }
-.gearCard .more {
+/* .gearCard .more {
   display: flex;
   justify-content: flex-end;
   margin-right: 1rem;
@@ -480,7 +494,7 @@ footer a {
   width: 100px;
   border-radius: 10px;
   color: white;
-}
+} */
 .archive-gears .search-section {
   background: unset;
   min-height: unset;
@@ -613,7 +627,21 @@ footer a {
   height: 300px;
   object-fit: cover;
   grid-area: 1 / 1 / auto / auto;
+ 
 }
+
+.singl-top-img-container{
+   grid-area: 1 / 1 / auto / auto;
+}
+
+/* .singl-top-img-container::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.245);
+} */
 
 .capacity-count span,
 .booked-count span {
@@ -631,12 +659,20 @@ footer a {
   background-color: var(--color-3);
   color: var(--color-4);
 }
+.single-item-feature {
+  display: flex;
+  gap: .5rem;
+}
 #signedinblock {
   text-align: center;
 }
 #book-adventure-message {
+  color: var(--color-1);
+  padding: 1rem 0;
+  /* text-align: end; */
+}
+#book-adventure-ical{
   color: var(--color-3);
-  text-align: end;
 }
 @media only screen and (min-width: 600px) {
   .search-section {
@@ -646,10 +682,11 @@ footer a {
   .single .map-container .wrapper {
     padding: 0px;
   }
+
 }
 @media only screen and (min-width: 740px) {
   .archive .article-container .wrapper {
-    height: 85vh;
+    height: 80vh;
     display: grid;
     grid-template-columns: 2fr 5fr;
   }
@@ -815,7 +852,7 @@ body.offline .center {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: rgb(255, 255, 255);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 #email,
@@ -850,7 +887,8 @@ body.offline .center {
   
 }
 .gear-sec-right {
-  background-image: url("images/gearsback.jpg");
+
+  background: url("images/gearsback.jpg") center center / cover;
   position: relative;
 }
 .gear-sec-right::after {
@@ -924,7 +962,7 @@ body.archive {
 }
 body.archive .adventure-list {
   overflow-y: scroll;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   padding-right: 1rem;
 }
 body.archive .adventure-list::-webkit-scrollbar {
@@ -953,6 +991,18 @@ body.archive .cart-des {
 .image-gallery {
   display: grid;
 }
+.single-top{
+  position: relative;
+}
+/* .image-gallery::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.045);
+} */
+
 .image-gallery .single-archive-details {
   grid-area: 1 / 1 / auto / auto;
   display: flex;
@@ -960,12 +1010,14 @@ body.archive .cart-des {
   padding-bottom: 2rem;
   color: rgb(255, 255, 255);
 }
+
 .single-archive-details .wrapper {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  padding: 0px 6rem;
+  padding: 0px 4rem;
+  text-shadow: #000 4px 0 10px;
 }
 .single-description .wrapper {
   display: grid;
@@ -993,8 +1045,8 @@ body.archive .cart-des {
   color: rgb(255, 255, 255);
   padding: 1rem;
   border-radius: 100%;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1028,7 +1080,14 @@ body.archive .cart-des {
   text-align: center;
   background: #FFF;
   padding-bottom: 2rem;
-  color: var(--color-3);
+  color: var(--color-2);
+}
+span#number-booking,
+span#capacity-booking {
+  padding: .5rem;
+}
+.footer-social a i{
+  font-size: 1.65rem;
 }
 @media only screen and (min-width: 740px) {
   .Desktop-header {
@@ -1039,6 +1098,22 @@ body.archive .cart-des {
   }
  
 }
+.signle-des-left {
+  padding: 1rem;
+  padding-left: 3rem;
+}
+.single-archive-det-right {
+  font-size: 1.3rem;
+}
+
+.tomtommarker {
+
+  background-image: url("icons/location.png");
+  background-size: cover;
+  width: 30px;
+  height: 48px;
+}
+
 @media only screen and (max-width: 680px) {
   .footer-cont {
     flex-flow: column nowrap;
@@ -1059,9 +1134,16 @@ body.archive .cart-des {
     align-items: start;
     margin-top: 2rem;
     gap: 1rem;
+    text-shadow: unset;
   }
   .single-archive-det-right {
     color: var(--color-2);
     font-weight: bold;
+    
+  }
+
+  .signle-des-left {
+    padding: 1rem;
+    /* padding-left: 3rem; */
   }
 }

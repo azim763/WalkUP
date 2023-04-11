@@ -186,7 +186,7 @@ header a i {
   padding: 2rem 0px;
 }
 .gears-sec {
-  background-color: rgb(218, 237, 218);
+  /* background-color: rgb(218, 237, 218); */
   color: var(--color-1);
 }
 .experience-sec {
@@ -212,6 +212,7 @@ header a i {
 .experience-sec p {
   color: var(--color-4);
 }
+/* 
 footer .wrapper {
   display: flex;
   flex-flow: column nowrap;
@@ -255,6 +256,13 @@ footer a {
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
+} */
+
+
+.single-description .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
 }
 
 /* Experience archive page */
@@ -520,7 +528,7 @@ footer a {
 .single #recommendationList h2{
   grid-column: 1/-1;
 }
-
+/* 
 footer .wrapper{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -539,7 +547,7 @@ footer .wrapper .footer-social{
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-}
+} */
 
 
 .single .Object-data{
@@ -749,11 +757,9 @@ padding: 1rem 0;
   background-color: unset;
 }
 
-.gears-sec{
-}
 
 .gearCard {
-  background: linear-gradient(to bottom, transparent 10%, rgb(227, 214, 214));
+  /* background: linear-gradient(to bottom, transparent 10%, rgb(227, 214, 214)); */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 1rem;
@@ -793,7 +799,7 @@ padding: 1rem 0;
 
 .gearCard h2{
   grid-column: 1/-1;
- color: darkgreen;
+ color: var(--color-1);
  text-align: left;
  margin: 1rem;
 }
@@ -806,7 +812,7 @@ padding: 1rem 0;
 
 .cardContentWrapper .availability i{
   margin-left: 0.5rem;
-  color: green;
+  color:  var(--color-1);
   font-size: 0.7rem;
 }
 
@@ -816,7 +822,7 @@ padding: 1rem 0;
  margin-right: 1rem;
  text-align: center;
 }
-
+/* 
 .gearCard .more a{
   display: block;
   padding: 0.5rem 1rem;
@@ -825,7 +831,7 @@ padding: 1rem 0;
   border-radius: 10px;
   color: white;
   height: 30px;
-}
+} */
 /* archive page */
 .archive-gears .search-section {
   /* background: unset;
@@ -965,7 +971,7 @@ padding-bottom: 2rem;
   padding: 1rem 0;
 }
 .single .single-description .wrapper > div {
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
   /* border-bottom: 1px solid  #c8c8c8; */
   padding-bottom: 0.5rem;
 }
@@ -979,7 +985,12 @@ padding-bottom: 2rem;
   /* height: 300px; */
   object-fit: cover;
 }
-
+.button-container
+{
+  display: flex;
+justify-content: end;
+padding: 0 1rem;
+}
 
 @media only screen and (min-width: 800px) {
 

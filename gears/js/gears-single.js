@@ -9,7 +9,7 @@ const recommendationList = document.getElementById("recommendationList");
 const searchParams = new URLSearchParams(window.location.search);
 const idAdv=searchParams.getAll("id");
 
-
+setTimeout(() => {
  myObjectsRef.orderByChild("ID").equalTo(Number(idAdv[0])).on("child_added", (snap) => {  
 
   let myObject = snap.val();
@@ -20,7 +20,7 @@ const idAdv=searchParams.getAll("id");
 
 
   let imgsrc="";
-  console.log(myObject.bycamera);
+  // console.log(myObject.bycamera);
   if (myObject.bycamera==true) {
     imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
   }
@@ -64,8 +64,8 @@ const idAdv=searchParams.getAll("id");
           <div>
             <p><span>Size: </span><span>${toolsObjects.size}</span></p>
         </div>
-        <div class="price">
-            <p><span>price: </span><span>${toolsObjects.price}/hour</span></p>
+        <div >
+            <p><span>price: </span><span>${toolsObjects.price}$ / hour</span></p>
         </div>
       </div>
       
@@ -75,12 +75,12 @@ const idAdv=searchParams.getAll("id");
         ${toolsObjects.Description}
         </p>
         <div class="text">
-       <label for="w3review">Send the message to the owner:</label> <br>
+      
       
       
       </div>
 
-      <a class="send" href="../other/chat.html?gid=${toolsObjects.ID}&ownerid=${toolsObjects.OwnerID}&userid=${document.getElementById("uid").innerHTML}&gt=${toolsObjects.Title}">${messagebtnTitle}</a>
+      <a class="regular-button" href="../other/chat.html?gid=${toolsObjects.ID}&ownerid=${toolsObjects.OwnerID}&userid=${document.getElementById("uid").innerHTML}&gt=${toolsObjects.Title}">${messagebtnTitle}</a>
 
       </div>
     </div>
@@ -96,31 +96,14 @@ const CategoryID = "1";
 // const myObjectListUI = document.getElementById("myObjectList");
 
 myObjectsRef.orderByChild("CategoryID").equalTo(Number(CategoryID[0])).on("child_added", snap => {   // this shows Adventures where ProviderID  is equal to 1
-//myObjectsRef.limitToLast(1).on("child_added", snap => {  // this shows the one last
-
-//myObjectsRef.on("child_added", (snap) => { // this shows all
 
   let myObject = snap.val();
-  console.log(myObject)
-// console.log('ghgfg');
-//   let $li = document.createElement("li");
-//   $li.innerHTML = myObject.Title;
-//   $li.setAttribute("child-key", snap.key);
-//   $li.addEventListener("click", myObjectClicked);
-//   myObjectListUI.append($li);
-// console.log(snap.val());
+ 
   var $div = document.createElement("div");
-//   <article>
-//   <a href="adventure/adventure-archive.html">
-//     <img src="../gears/images-gears/shoes.png" alt="" />
-//     <h2>${myObject.Title}</h2>
-//   </a>
-// </article>
-
 
 
 let imgsrc="";
-console.log(myObject.bycamera);
+// console.log(myObject.bycamera);
 if (myObject.bycamera==true) {
   imgsrc= ` <img src="${ myObject.ImageCam}" alt="" />`;
 
@@ -130,22 +113,18 @@ else{
 }
 
 
-console.log(myObject);
+// console.log(myObject);
   $div.innerHTML = `<section class="gears-sec">
         <div class="gearCard">
           <div class="imgBanner">
-        ${imgsrc}
-            <div class="icons">
-              <i class="fa-regular fa-heart"></i>
-              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-            </div>
+        ${imgsrc}           
           </div>           
             <h2>${myObject.Title}</h2>
             <div class="cardContentWrapper">
               <div class="brandname">${myObject.brand}</div>
               <div class="availability">Available<i class="fa-solid fa-circle"></i> </div>
             </div>
-            <div class="more"><a href="gear-single.html?id=${myObject.ID}">More</a></div>
+            <div class="more"><a class="regular-button" href="gear-single.html?id=${myObject.ID}">More</a></div>
         </div>
       </section>`;
 
@@ -154,7 +133,5 @@ console.log(myObject);
 recommendationList.append($div);
 {/* <div class="more"><a href="gear-single.html?id=${tools.ID}">More</a></div> */}
 
-
-
 });
- 
+}, 1000);

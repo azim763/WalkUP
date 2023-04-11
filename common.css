@@ -3,32 +3,32 @@
   font-weight: 400;
 }
 
-.new-adventure-link{
-  padding:1rem;
+.new-adventure-link {
+  padding: 1rem;
   background-color: var(--color-1);
   color: var(--color-4);
   margin: auto;
   font-size: inherit;
   display: block;
-width: 130px;
-border-radius: 8px;
-  }
-  .new-item-link{
-      padding: 1rem;
-  }
+  width: 130px;
+  border-radius: 8px;
+  width: fit-content;
+}
+.new-item-link {
+  padding: 1rem;
+}
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
-  .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-  
-
+/* 
   .hamburger-menu {
       background-color: #483c26cf;
       opacity: 0 !important;
@@ -50,8 +50,8 @@ border-radius: 8px;
       align-items: flex-end;
       gap: 0.5rem;
       margin-bottom: 3rem;
-    }
-    .hamburger-menu ul li {
+    } */
+/* .hamburger-menu ul li {
       width: 100%;
       display: block;
       border-bottom: 1px solid #fff;
@@ -68,11 +68,55 @@ border-radius: 8px;
     .hamburger-menu a{
     color: #FFF;
     font-size: 1.5rem;
-    }
-    
-    
-    .btn-wrapper{
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      padding: 5px;
-    }
+    } */
+
+.btn-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 5px;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.regular-button {
+  background-color: var(--color-3);
+  color: var(--color-4);
+  display: block;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 60px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: 1px solid var(--color-3);
+  width: fit-content;
+  height: 33px;
+}
+
+.outlined-button {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  display: block;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 90px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: 1px solid var(--color-3);
+  width: fit-content;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.center {
+  margin: 2px auto;
+}

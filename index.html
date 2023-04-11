@@ -39,6 +39,7 @@
   <script src="js/common.js" defer></script>
   <link rel="stylesheet" href="common.css" />
 <link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="footer.css">
   <title>WalkUp</title>
 </head>
 
@@ -214,7 +215,7 @@
         </form>
       </div>
     </section>
-    <section class="activities-cats slider-sec">
+    <section id="activities-category" class="activities-cats slider-sec">
       <h2>Explore Your Fit Activity</h2>
       <div class="wrapper">
         <div class="slider-container swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
@@ -243,7 +244,7 @@
               Join our community to have access to the latest experiences and
               discover new places to visit outdoors.
             </p>
-            <a href="#">Book Experience</a>
+            <a href="#activities-category">Book Experience</a>
           </div>
         </div>
         <div class="experiencesec-right">
@@ -252,15 +253,19 @@
               Join our community to have access to the latest experiences and
               discover new places to visit outdoors.
             </p>
-            <a href="#">Book Experience</a>
+            <a href="#activities-category">Book Experience</a>
           </div>
         </div>
       </section>
     </div>
   </main>
+
+
   <footer>
     <div class="wrapper">
-      <span href="index.html" class="branding"><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG" /></span>
+      <span href="index.html" class="branding"
+        ><img src="logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
+      /></span>
 
       <div class="footer-cont">
         <div class="footer-navs">
@@ -302,6 +307,9 @@
       </div>
     </div>
   </footer>
+
+
+
 </body>
 
 <script src="js/data/readcats.js" type="module" defer></script>

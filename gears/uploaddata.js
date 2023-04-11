@@ -23,13 +23,8 @@ form1.addEventListener("submit", (event) => {
     // var title = document.getElementById("title").value;
     var adventure_category = document.getElementById('adventure_category').value;
     var title = document.getElementById('title').value;
-    // var latitude = document.getElementById('latitude').innerText;
-    // var longitude = document.getElementById('longitude').innerText;
-    // var myFile = document.getElementById('myFile').value;
-    // const imageURLInput = document.querySelector("#photo");
-    // imageURLInput.value = canvasDataURL;
-
-    var imagecamera= document.getElementById('photo').src ;
+   
+    var imagecamera= document.getElementById('photo1').src ;
     var description = document.getElementById('description').value;
     var brandname = document.getElementById('brandname').value;
     var Price = document.getElementById('Price').value;
@@ -38,6 +33,8 @@ form1.addEventListener("submit", (event) => {
      var Occupancy = document.getElementById('occupancy').value;
      var material = document.getElementById('material').value;
   
+
+
     // var checklist = document.getElementById('adventure_category').value;
   
 var provider=document.getElementById('name').innerHTML;
@@ -126,7 +123,8 @@ let seconds =Math.round( new Date().getTime() / 1000);
         // }).then(data => {
         //     console.log(data);
         // });
-         alert("data submitted");
+        //  alert("data submitted");
+         Swal.fire('your ads successfully created!');
          window.location.href = 'gear-archive.html?id='+adventure_category;
         //  windows.close();
       })

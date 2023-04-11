@@ -25,9 +25,11 @@
 
 
 
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js "></script>
+  <link href="../css/sweetalert2.css" rel="stylesheet">
 
 
-
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../common.css">
   <!-- <script src="tomtommap.js" defer></script> -->
@@ -36,12 +38,6 @@
   <script  src="readdata.js"  type="module" defer></script>
  
  
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
-    defer</script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-      defer</script>
-      <script type="text/javascript" src="/maps.js" defer></script> -->
-      <!-- <script type="text/javascript" src="/googlemaps.js" defer></script> --> 
       <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
       <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css" rel="stylesheet" type="text/css">
       <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script> 
@@ -54,7 +50,9 @@
  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-
+<link rel="stylesheet" href="../menu.css">
+<link rel="stylesheet" href="../footer.css">
+ 
 
     </head>
     
@@ -146,7 +144,7 @@
          
                    <div class="camera-wrapper">
             <div class="final-step">
-              <input type="button" id="startbutton" value="Take a photo" />
+              <input type="button" id="startbutton" value="Take a photo" class=" regular-button center"/>
               <div id="camera-widget-wrapper" class="camera-widget-wrapper">
                 <div id="camera-widget" class="camera-widget">
                   <div class="widget-head">
@@ -161,20 +159,18 @@
                     <canvas  id="canvas"> </canvas>
                     <div class="output visually-hidden" id="output">
                       <img
-                        id="photo"
+                        id="photo1"
                         alt="The screen capture will appear in this box."
                       />
                     </div>
                     <div class="camera-controls">
                       <div class="retake" id="retake">
-                        <i class="fas fa-redo-alt"></i>
+                        <i class="fas fa-redo-alt" style="border: 1px solid var(--color-3); border-radius: 50%; padding: 0.5rem;"></i>
                       </div>
                       <div class="capture" id="capturebutton">
-                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-camera" style="border: 1px solid var(--color-3); border-radius: 50%; padding: 0.5rem;"></i>
                       </div>
-                      <div class="save disabled" id="save">
-                        <i class="far fa-check-circle"></i>
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -183,25 +179,26 @@
           </div>
 
           <label for="description">Description</label>
-          <textarea type="text" id="description" class="input" name="description" placeholder="Your experience..."> </textarea>
+          <textarea type="text" id="description" class="input" name="description"> </textarea>
           
           <label for="brandname">Brand</label>
-          <input type="texts" id="brandname" class="input" name="brandname" min="0" required><br>
+          <input type="texts" id="brandname" class="input" name="brandname" required><br>
           
           <label for="occupancy">Occupancy</label>
-          <input type="text" id="occupancy" class="input" name="occupancy" min="0" required><br>
+          <input type="text" id="occupancy" class="input" name="occupancy"  required><br>
           
           <label for="material">material</label>
-          <input type="number" id="material" class="input" name="material" min="0" required><br>
+          <input type="text" id="material" class="input" name="material" required><br>
           
           <label for="Size">Size</label>
-      <input type="text" id="Size" class="input" name="Size" min="0" max="5" required><br>
+      <input type="text" id="Size" class="input" name="Size" required><br>
       
-      <label for="Price">Price</label>
+      <label for="Price">Price ($/H)</label>
       <input type="number" id="Price" class="input" name="Price" min="0" max="1000" required><br>
       <div class="btn-wrapper">
-          <input type="submit" id="submit_form_btn" name="submit" value="Submit"> 
-      <button type="button" onclick="history.back()">cancel</button>
+        
+      <button type="button" class="outlined-button width-100" onclick="history.back()">cancel</button>  
+      <input type="submit" id="submit_form_btn" name="submit" value="Submit" class="regular-button width-100"> 
       </div>
     
      <!-- <a href="gear-archive.html">Back</a> -->
@@ -209,35 +206,53 @@
    
     <div class="checklist"></div>
   </div>
-  <!-- footer -->
   <footer>
     <div class="wrapper">
-      <span href="index.html" class="branding"><img src="../logo/SVG Logo/Walkup Logo-10.svg" alt="Logo SVG"></span>
-      <nav class="footer-main-nav">
-        <ul>
-          <li><a href="../index.html">Explore</a></li>
-          <li><a href="../gears/gear-home.html">Gear Center</a></li>
-          <li><a href="../other/aboutus.html">About Us</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-social">
-        <ul>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-          </li>
-        </ul>
-      </nav>
+      <span href="../index.html" class="branding"
+        ><img src="../logo/SVG Logo/Walkup Logo-06.svg" alt="Logo SVG"
+      /></span>
+
+      <div class="footer-cont">
+        <div class="footer-navs">
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../gears/gear-home.html">Gears</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-main-nav">
+            <ul>
+              <li><a href="../other/aboutus.html">About us</a></li>
+              <li><a href="../other/profile.html">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <nav class="footer-social">
+          <h3>Follow us here:</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2023 Walkup. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
 </body>
 
  <script src="../auth/loggedin.js"></script>
